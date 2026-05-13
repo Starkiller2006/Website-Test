@@ -1,0 +1,1868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAS Chemical LLC — Cosmetic Raw Ingredients</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF8F4;
+    --warm-white: #FFFFFF;
+    --sand: #E8EEF3;
+    --sand-mid: #B8CDD8;
+    --text-dark: #0D1F2D;
+    --text-mid: #2E4557;
+    --text-light: #7A96A8;
+    --accent: #1B4D72;
+    --accent-light: #2E6FA0;
+    --accent-bg: #E6F0F7;
+    --accent-green: #76B82A;
+    --accent-green-bg: #EEF7E0;
+    --border: #D4E2EC;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 248, 244, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 4rem;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo span {
+    color: var(--accent-green);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--text-mid);
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text-dark); }
+
+  .nav-links a.active { color: var(--text-dark); font-weight: 500; }
+
+  .nav-cta {
+    background: var(--accent) !important;
+    color: white !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 100px;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--accent-light) !important; }
+
+  /* PAGE SYSTEM */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* SECTIONS */
+  section { padding: 6rem 4rem; }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-green);
+    background: var(--accent-green-bg);
+    padding: 0.3rem 0.85rem;
+    border-radius: 100px;
+    margin-bottom: 1.25rem;
+  }
+
+  h1, h2, h3 { font-family: var(--serif); letter-spacing: -0.02em; line-height: 1.15; }
+
+  /* HERO */
+  .hero {
+    padding: 7rem 4rem 6rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .hero-left {}
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    max-width: 14ch;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent-green);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    max-width: 44ch;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    padding: 0.85rem 2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary:hover { background: var(--accent-light); transform: translateY(-1px); }
+
+  .btn-secondary {
+    color: var(--text-mid);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    transition: color 0.2s;
+  }
+
+  .btn-secondary:hover { color: var(--text-dark); }
+
+  .hero-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .hero-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: transform 0.2s;
+  }
+
+  .hero-card:hover { transform: translateY(-3px); }
+
+  .hero-card:nth-child(2) { margin-top: 1.5rem; }
+  .hero-card:nth-child(4) { margin-top: 1.5rem; }
+
+  .hero-card-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--accent-bg);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.85rem;
+    font-size: 1.1rem;
+  }
+
+  .hero-card h4 {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+  }
+
+  .hero-card p {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    line-height: 1.5;
+  }
+
+  /* BENEFITS */
+  .benefits-section {
+    background: white;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .benefits-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .benefits-header {
+    text-align: center;
+    max-width: 54ch;
+    margin: 0 auto 4rem;
+  }
+
+  .benefits-header h2 {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    margin-bottom: 1rem;
+  }
+
+  .benefits-header p {
+    color: var(--text-mid);
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .benefit-card {
+    padding: 2rem 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--cream);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .benefit-card:hover { border-color: var(--accent-green); transform: translateY(-4px); }
+
+  .benefit-number {
+    font-family: var(--serif);
+    font-size: 3rem;
+    color: var(--sand-mid);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .benefit-card h3 {
+    font-family: var(--sans);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 0.6rem;
+  }
+
+  .benefit-card p {
+    font-size: 0.875rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  /* CATEGORIES / HOW IT WORKS */
+  .categories-section {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+
+  .category-card {
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+
+  .category-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
+
+  .category-visual {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+  }
+
+  .category-visual.oils { background: #FEF7E8; }
+  .category-visual.clays { background: #F5EDE4; }
+  .category-visual.actives { background: #EDF5F0; }
+
+  .category-body {
+    padding: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .category-body h3 {
+    font-family: var(--sans);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+
+  .category-body p {
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  .category-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--accent-green);
+    margin-top: 0.85rem;
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-section {
+    background: var(--accent);
+    color: white;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .testimonials-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .testimonials-inner .section-tag {
+    background: rgba(118,184,42,0.2);
+    color: #a8e060;
+  }
+
+  .testimonials-inner h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: white;
+    margin-bottom: 3rem;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .testimonial-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+
+  .stars {
+    color: #F5C75A;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-card blockquote {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .author-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+    flex-shrink: 0;
+  }
+
+  .author-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: white;
+  }
+
+  .author-title {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .testimonials-placeholder-note {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.35);
+    font-style: italic;
+  }
+
+  /* PRICING */
+  .pricing-section {
+    border-top: 1px solid var(--border);
+    background: white;
+  }
+
+  .pricing-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .pricing-header {
+    text-align: center;
+    max-width: 50ch;
+    margin: 0 auto 3.5rem;
+  }
+
+  .pricing-header h2 {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    margin-bottom: 0.85rem;
+  }
+
+  .pricing-header p {
+    color: var(--text-mid);
+    font-size: 1rem;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .pricing-card {
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+    background: var(--cream);
+    position: relative;
+  }
+
+  .pricing-card.featured {
+    border: 2px solid var(--accent);
+    background: white;
+  }
+
+  .pricing-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.85rem;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  .pricing-tier {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .pricing-price {
+    font-family: var(--serif);
+    font-size: 2.8rem;
+    color: var(--text-dark);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .pricing-price sup {
+    font-size: 1.2rem;
+    vertical-align: top;
+    margin-top: 0.5rem;
+    display: inline-block;
+  }
+
+  .pricing-period {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-desc {
+    font-size: 0.875rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pricing-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-bottom: 2rem;
+  }
+
+  .pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.875rem;
+    color: var(--text-mid);
+  }
+
+  .pricing-features li::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: var(--accent-bg);
+    border-radius: 50%;
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3 8l3.5 3.5L13 5' stroke='%231B4D72' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size: contain;
+  }
+
+  .btn-outline {
+    display: block;
+    text-align: center;
+    border: 1.5px solid var(--accent);
+    color: var(--accent);
+    padding: 0.75rem;
+    border-radius: 100px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+    background: none;
+    width: 100%;
+  }
+
+  .btn-outline:hover { background: var(--accent); color: white; }
+  .pricing-card.featured .btn-outline { background: var(--accent); color: white; }
+  .pricing-card.featured .btn-outline:hover { background: var(--accent-light); }
+
+  /* FAQ */
+  .faq-section {
+    border-top: 1px solid var(--border);
+    background: var(--cream);
+  }
+
+  .faq-inner {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .faq-inner h2 {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .faq-subhead {
+    color: var(--text-mid);
+    margin-bottom: 3rem;
+    font-size: 1rem;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 1.4rem 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    gap: 1rem;
+    transition: color 0.2s;
+  }
+
+  .faq-question:hover { color: var(--accent-green); }
+
+  .faq-icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--text-light);
+    transition: transform 0.25s, border-color 0.2s;
+  }
+
+  .faq-item.open .faq-icon { transform: rotate(45deg); border-color: var(--accent-green); color: var(--accent-green); }
+
+  .faq-answer {
+    display: none;
+    padding: 0 0 1.4rem;
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    line-height: 1.8;
+    max-width: 64ch;
+  }
+
+  .faq-item.open .faq-answer { display: block; }
+
+  /* FOOTER */
+  footer {
+    background: var(--text-dark);
+    color: white;
+    padding: 4rem 4rem 2.5rem;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 2rem;
+  }
+
+  .footer-brand h3 {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    color: var(--accent-green);
+  }
+
+  .footer-brand p {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.75;
+    max-width: 30ch;
+  }
+
+  .footer-col h4 {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 1rem;
+  }
+
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+
+  .footer-col a {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: var(--sans);
+  }
+
+  .footer-col a:hover { color: white; }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* ABOUT PAGE */
+  .about-hero {
+    padding: 6rem 4rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-hero h1 {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-hero p {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-photo-placeholder {
+    background: var(--sand);
+    border-radius: 24px;
+    aspect-ratio: 4/5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    color: var(--text-light);
+    font-size: 0.875rem;
+    border: 1px solid var(--border);
+  }
+
+  .about-photo-placeholder .photo-icon {
+    width: 52px;
+    height: 52px;
+    background: var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+  }
+
+  .about-values {
+    padding: 4rem;
+    background: white;
+    border-top: 1px solid var(--border);
+  }
+
+  .about-values-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .about-values h2 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    margin-bottom: 2.5rem;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .value-item {
+    padding: 1.75rem;
+    background: var(--cream);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+  }
+
+  .value-item h3 {
+    font-family: var(--sans);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .value-item p {
+    font-size: 0.875rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  /* PRODUCTS PAGE */
+  .products-header {
+    padding: 4rem 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .products-header h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .products-header p {
+    font-size: 1rem;
+    color: var(--text-mid);
+  }
+
+  .products-filters {
+    padding: 0 4rem 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 0.45rem 1.1rem;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    background: white;
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: var(--text-mid);
+    cursor: pointer;
+    font-family: var(--sans);
+    transition: all 0.2s;
+  }
+
+  .filter-btn:hover, .filter-btn.active {
+    border-color: var(--accent-green);
+    background: var(--accent-green-bg);
+    color: var(--accent);
+  }
+
+  .products-grid-section {
+    padding: 0 4rem 5rem;
+  }
+
+  .products-grid-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .product-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+
+  .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,0.07); }
+
+  .product-visual {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+  }
+
+  .product-body {
+    padding: 1.25rem 1.25rem 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .product-tag {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.4rem;
+  }
+
+  .product-body h3 {
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+
+  .product-body p {
+    font-size: 0.82rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .product-price {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-dark);
+  }
+
+  .product-price span {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--text-light);
+  }
+
+  .btn-add {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--accent-green);
+    border: 1px solid var(--accent-green);
+    background: none;
+    border-radius: 100px;
+    padding: 0.35rem 0.85rem;
+    cursor: pointer;
+    font-family: var(--sans);
+    transition: all 0.2s;
+  }
+
+  .btn-add:hover { background: var(--accent-green); color: white; }
+
+  /* Utility */
+  .max-w { max-width: 1200px; margin: 0 auto; }
+
+  @media (max-width: 1024px) {
+    nav { padding: 0 2rem; }
+    section { padding: 5rem 2rem; }
+    .hero { padding: 5rem 2rem 4rem; grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    .categories-grid { grid-template-columns: 1fr 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .about-hero { grid-template-columns: 1fr; }
+    .products-grid-inner { grid-template-columns: repeat(2, 1fr); }
+    .about-values { padding: 3rem 2rem; }
+    .products-header, .products-filters, .products-grid-section { padding-left: 2rem; padding-right: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#" onclick="showPage('home')">CAS<span> Chemical</span> LLC</a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+    <li><a href="#" onclick="showPage('about')" id="nav-about">About</a></li>
+    <li><a href="#" onclick="showPage('products')" id="nav-products">Products</a></li>
+    <li><a href="#" class="nav-cta" onclick="showPage('contact')">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- HOME PAGE -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Premium Cosmetic Ingredients</p>
+      <h1>Helping you look for what you are looking for</h1>
+      <p class="hero-sub">Pure, traceable raw ingredients for independent formulators, cosmetic brands, and makers. From plant oils to cosmetic clays — everything you need, exactly as nature made it.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="showPage('products')">Browse Ingredients</button>
+        <button class="btn-secondary" onclick="showPage('about')">Our story →</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="hero-card-icon">🫙</div>
+        <h4>Carrier Oils</h4>
+        <p>Cold-pressed, unrefined oils for skin and hair formulations.</p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">🌿</div>
+        <h4>Plant Actives</h4>
+        <p>Botanical extracts and bioactives for efficacious cosmetics.</p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">🪨</div>
+        <h4>Cosmetic Clays</h4>
+        <p>Kaolin, bentonite and more for masks, scrubs, and powders.</p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">⚗️</div>
+        <h4>Emulsifiers & Chemicals</h4>
+        <p>Everything from emollients to preservatives — lab-grade.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BENEFITS -->
+  <section class="benefits-section">
+    <div class="benefits-inner">
+      <div class="benefits-header">
+        <span class="section-tag">Why CAS Chemical LLC</span>
+        <h2>Built for formulators who care</h2>
+        <p>We know you don't just need ingredients — you need confidence in what you're using and where it came from.</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-number">01</div>
+          <h3>Full traceability</h3>
+          <p>Every ingredient comes with clear sourcing information so you can stand behind your formulations.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-number">02</div>
+          <h3>Batch-tested purity</h3>
+          <p>Certificates of analysis available for every product. No guessing, no compromises.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-number">03</div>
+          <h3>Small & bulk orders</h3>
+          <p>Whether you're testing a new formula or scaling production, we ship in quantities that make sense for you.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-number">04</div>
+          <h3>Formulator support</h3>
+          <p>Usage guidelines, recommended percentages, and compatibility notes included with every ingredient.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section>
+    <div class="categories-section">
+      <span class="section-tag">What we carry</span>
+      <h2 style="font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 0.75rem;">Explore our ingredient range</h2>
+      <p style="color: var(--text-mid); font-size: 1.05rem; max-width: 52ch; line-height: 1.75;">From oils and butters to clays, actives, and functional chemicals — a curated selection for serious cosmetic formulators.</p>
+      <div class="categories-grid">
+        <div class="category-card" onclick="showPage('products')">
+          <div class="category-visual oils">🫙</div>
+          <div class="category-body">
+            <h3>Oils & Butters</h3>
+            <p>Cold-pressed carrier oils, refined and unrefined plant butters. Jojoba, rosehip, shea, mango, and more.</p>
+            <button class="category-link">Browse oils →</button>
+          </div>
+        </div>
+        <div class="category-card" onclick="showPage('products')">
+          <div class="category-visual clays">🪨</div>
+          <div class="category-body">
+            <h3>Clays & Minerals</h3>
+            <p>Kaolin, bentonite, French green clay, and cosmetic-grade mineral powders for a range of skin types.</p>
+            <button class="category-link">Browse clays →</button>
+          </div>
+        </div>
+        <div class="category-card" onclick="showPage('products')">
+          <div class="category-visual actives">⚗️</div>
+          <div class="category-body">
+            <h3>Actives & Chemicals</h3>
+            <p>Emulsifiers, surfactants, preservatives, humectants, and botanical extracts for functional formulations.</p>
+            <button class="category-link">Browse actives →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="testimonials-inner">
+      <span class="section-tag">Reviews</span>
+      <h2>What our customers say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Replace this with a real review from one of your customers. A short, specific quote about the quality or service works best."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">AB</div>
+            <div>
+              <div class="author-name">Customer Name</div>
+              <div class="author-title">Independent Formulator</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Another placeholder for a genuine customer testimonial. Mention a specific product or outcome for maximum credibility."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">CD</div>
+            <div>
+              <div class="author-name">Customer Name</div>
+              <div class="author-title">Skincare Brand Founder</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"A third testimonial here. Consider asking your best customers for a short quote — even two sentences goes a long way."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">EF</div>
+            <div>
+              <div class="author-name">Customer Name</div>
+              <div class="author-title">DIY Cosmetics Maker</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="testimonials-placeholder-note">← Replace these placeholders with real quotes from your customers</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="faq-inner">
+      <span class="section-tag">FAQ</span>
+      <h2>Frequently asked questions</h2>
+      <p class="faq-subhead">Anything not covered here? Reach out — we're happy to help.</p>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          What is the minimum order quantity?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Most of our ingredients are available from as little as 50g or 100ml, making it easy to test formulations before committing to larger quantities. Some specialty ingredients have a higher minimum — this is noted on each product page.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Do you provide Certificates of Analysis (COA)?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Yes. COAs are available for every ingredient we stock. Starter customers can request them, while Pro and Wholesale accounts receive them automatically with each order. We believe full transparency about ingredient quality is non-negotiable.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Are your ingredients suitable for leave-on cosmetics?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Many of them are, yes — but suitability depends on the specific ingredient, its grade, and your formulation. Each product page includes usage guidance, typical application types, and recommended inclusion rates to help you formulate confidently.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Do you ship internationally?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">We currently ship to [your regions here]. Some chemicals and actives are restricted in certain countries due to local cosmetic regulations. If you're unsure whether an ingredient can be shipped to your location, contact us before ordering.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Can I get samples before placing a full order?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Our small-quantity starting sizes are designed to work as sampling orders. For specific sample requests on larger-format products or wholesale enquiries, get in touch and we'll do our best to accommodate.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          How are products stored and shipped?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">All ingredients are stored in climate-appropriate conditions and shipped in sealed, food-safe or lab-grade packaging. Temperature-sensitive ingredients are flagged and packed with appropriate insulation during warmer months.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>CAS Chemical LLC</h3>
+        <p>Premium raw ingredients for cosmetic formulators, indie brands, and makers who care about what goes into their products.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a onclick="showPage('home')">Home</a></li>
+          <li><a onclick="showPage('about')">About</a></li>
+          <li><a onclick="showPage('products')">Products</a></li>
+          <li><a onclick="showPage('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a>Shipping info</a></li>
+          <li><a>Returns</a></li>
+          <li><a>COA requests</a></li>
+          <li><a onclick="showPage('contact')">Wholesale enquiries</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a>Privacy policy</a></li>
+          <li><a>Terms of service</a></li>
+          <li><a>Cookie policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 CAS Chemical LLC. All rights reserved.</span>
+      <span>Made with care for cosmetic makers</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ABOUT PAGE -->
+<div class="page" id="page-about">
+  <div class="about-hero">
+    <div>
+      <span class="section-tag">About Us</span>
+      <h1>20 years in the industry, all of it in your corner</h1>
+      <p>CAS Chemical LLC was built on a simple belief: that sourcing raw cosmetic ingredients should feel like working with a trusted partner — not navigating a faceless catalogue. With over two decades of hands-on experience in the cosmetic supply industry, we've seen every challenge a formulator, brand, or buyer can face. And we built CAS Chemical to solve them.</p>
+      <p>We don't just sell ingredients. We make ourselves an extension of your buying team — understanding your timelines, your formulation needs, and your business goals so we can help you move faster, smarter, and with greater confidence at every step.</p>
+      <p style="margin-bottom: 0;">Your success is our success. That's not a tagline — it's how we've operated for over 20 years, and it's the standard we hold ourselves to every single day.</p>
+    </div>
+    <div class="about-photo-placeholder">
+      <div class="photo-icon">📸</div>
+      <span>Your photo here</span>
+    </div>
+  </div>
+
+  <div class="about-values">
+    <div class="about-values-inner">
+      <span class="section-tag">What we stand for</span>
+      <h2>Our values</h2>
+      <div class="values-grid">
+        <div class="value-item">
+          <h3>Your team, not just your supplier</h3>
+          <p>We position ourselves as an extension of your buying team. That means proactive communication, deep product knowledge, and always having your interests front and center — not just fulfilling orders.</p>
+        </div>
+        <div class="value-item">
+          <h3>Experience you can rely on</h3>
+          <p>Over 20 years in cosmetic ingredients means we've seen market shifts, supply disruptions, and formulation challenges up close. That experience is something we bring to every conversation with every customer.</p>
+        </div>
+        <div class="value-item">
+          <h3>Customer success above all</h3>
+          <p>Helping our customers is the number one priority — full stop. Whether you need a single ingredient or a long-term supply partner, we show up with the same level of care, urgency, and commitment every time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>CAS Chemical LLC</h3>
+        <p>Premium raw ingredients for cosmetic formulators, indie brands, and makers who care about what goes into their products.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a onclick="showPage('home')">Home</a></li>
+          <li><a onclick="showPage('about')">About</a></li>
+          <li><a onclick="showPage('products')">Products</a></li>
+          <li><a onclick="showPage('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a>Shipping info</a></li>
+          <li><a>Returns</a></li>
+          <li><a onclick="showPage('contact')">COA requests</a></li>
+          <li><a onclick="showPage('contact')">Wholesale enquiries</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a>Privacy policy</a></li>
+          <li><a>Terms of service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 CAS Chemical LLC. All rights reserved.</span>
+    </div>
+  </footer>
+</div>
+
+<!-- PRODUCTS PAGE -->
+<div class="page" id="page-products">
+  <div class="products-header">
+    <span class="section-tag">Full Catalogue</span>
+    <h1>Our ingredients</h1>
+    <p>Cosmetic-grade raw materials, sourced carefully and shipped fast.</p>
+  </div>
+
+  <div class="products-filters">
+    <button class="filter-btn active" onclick="filterProducts(this, 'all')">All ingredients</button>
+    <button class="filter-btn" onclick="filterProducts(this, 'oil')">Oils & Butters</button>
+    <button class="filter-btn" onclick="filterProducts(this, 'clay')">Clays & Minerals</button>
+    <button class="filter-btn" onclick="filterProducts(this, 'active')">Actives</button>
+    <button class="filter-btn" onclick="filterProducts(this, 'chemical')">Emulsifiers & Chemicals</button>
+  </div>
+
+  <div class="products-grid-section">
+    <div class="products-grid-inner" id="products-grid">
+      <!-- Oils -->
+      <div class="product-card" data-cat="oil">
+        <div class="product-visual" style="background: #FEF7E8;">🫙</div>
+        <div class="product-body">
+          <div class="product-tag">Carrier Oil</div>
+          <h3>Jojoba Oil — Cold Pressed</h3>
+          <p>Golden, unrefined jojoba with a long shelf life. Excellent for leave-on skin and hair formulations.</p>
+          <div class="product-footer">
+            <div class="product-price">$XX.XX <span>/ 100ml</span></div>
+            <button class="btn-add">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" data-cat="oil">
+        <div class="product-visual" style="background: #FFF4EE;">🌹</div>
+        <div class="product-body">
+          <div class="product-tag">Carrier Oil</div>
+          <h3>Rosehip Seed Oil</h3>
+          <p>Rich in trans-retinoic acid and essential fatty acids. Popular in anti-ageing and scar formulations.</p>
+          <div class="product-footer">
+            <div class="product-price">$XX.XX <span>/ 50ml</span></div>
+            <button class="btn-add">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" data-cat="oil">
+        <div class="product-visual" style="background: #F7F4EE;">🥭</div>
+        <div class="product-body">
+          <div class="product-tag">Butter</div>
+          <h3>Mango Seed Butter</h3>
+          <p>Hard, emollient butter with a melting point near skin temperature. Ideal for balms, body butters, and bars.</p>
+          <div class="product-footer">
+            <div class="product-price">$XX.XX <span>/ 100g</span></div>
+            <button class="btn-add">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- Clays -->
+      <div class="product-card" data-cat="clay">
+        <div class="product-visual" style="background: #F5EDE4;">🪨</div>
+        <div class="product-body">
+          <div class="product-tag">Clay</div>
+          <h3>Kaolin Clay — White</h3>
+          <p>Gentle, fine-grade white kaolin. Suitable for sensitive skin, loose powder, and facial mask formulations.</p>
+          <div class="product-footer">
+            <div class="product-price">$XX.XX <span>/ 250g</span></div>
+            <button class="btn-add">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" data-cat="clay">
+        <div class="product-visual" style="background: #EEF0E8;">🌿</div>
+        <div class="product-body">
+          <div class="product-tag">Clay</div>
+          <h3>French Green Clay</h3>
+          <p>Highly absorbent with a distinctive mineral-rich profile. Classic choice for detoxifying masks.</p>
+          <div class="product-footer">
+            <div class="product-price">$XX.XX <span>/ 250g</span></div>
+            <button class="btn-add">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" data-cat="clay">
+        <div class="product-visual" style="background: #F2EEE8;">🪨</div>
+        <div class="product-body">
+          <div class="product-tag">Clay</div>
+          <h3>Bentonite Clay</h3>
+          <p>Swelling clay with high absorption capacity. Used in masks, deodorants, and dry shampoos.</p>
+          <div class="product-footer">
+            <div class="product-price">$XX.XX <span>/ 500g</span></div>
+            <button class="btn-add">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- Actives -->
+      <div class="product-card" data-cat="active">
+        <div class="product-visual" style="background: #EDF5F0;">🌱</div>
+        <div class="product-body">
+          <div class="product-tag">Active</div>
+          <h3>Niacinamide — 98% Pure</h3>
+          <p>Water-soluble vitamin B3 active for brightening, barrier support, and pore-minimising formulations.</p>
+          <div class="product-footer">
+            <div class="product-price">$XX.XX <span>/ 50g</span></div>
+            <button class="btn-add">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" data-cat="active">
+        <div class="product-visual" style="background: #EEF5F8;">💧</div>
+        <div class="product-body">
+          <div class="product-tag">Active</div>
+          <h3>Hyaluronic Acid Powder</h3>
+          <p>High molecular weight HA for surface hydration and skin-feel. Dissolves in water for serums and creams.</p>
+          <div class="product-footer">
+            <div class="product-price">$XX.XX <span>/ 10g</span></div>
+            <button class="btn-add">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- Chemicals -->
+      <div class="product-card" data-cat="chemical">
+        <div class="product-visual" style="background: #F0EEF8;">⚗️</div>
+        <div class="product-body">
+          <div class="product-tag">Emulsifier</div>
+          <h3>BTMS-50</h3>
+          <p>Cationic conditioning emulsifier for hair products. Creates rich, creamy conditioners and leave-in treatments.</p>
+          <div class="product-footer">
+            <div class="product-price">$XX.XX <span>/ 100g</span></div>
+            <button class="btn-add">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" data-cat="chemical">
+        <div class="product-visual" style="background: #F5F5F0;">🧪</div>
+        <div class="product-body">
+          <div class="product-tag">Preservative</div>
+          <h3>Preservative Blend — Ecocert</h3>
+          <p>Broad-spectrum preservation for water-containing formulations. Suitable for natural and organic products.</p>
+          <div class="product-footer">
+            <div class="product-price">$XX.XX <span>/ 50ml</span></div>
+            <button class="btn-add">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" data-cat="chemical">
+        <div class="product-visual" style="background: #F8F4EE;">🔬</div>
+        <div class="product-body">
+          <div class="product-tag">Humectant</div>
+          <h3>Glycerin — Vegetable USP</h3>
+          <p>Vegetable-derived, USP-grade glycerin. Versatile humectant for rinse-off and leave-on formulations.</p>
+          <div class="product-footer">
+            <div class="product-price">$XX.XX <span>/ 500ml</span></div>
+            <button class="btn-add">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" data-cat="oil">
+        <div class="product-visual" style="background: #FFFBEE;">🫒</div>
+        <div class="product-body">
+          <div class="product-tag">Carrier Oil</div>
+          <h3>Squalane — Sugarcane</h3>
+          <p>Lightweight, plant-derived squalane with exceptional skin compatibility and a non-greasy finish.</p>
+          <div class="product-footer">
+            <div class="product-price">$XX.XX <span>/ 100ml</span></div>
+            <button class="btn-add">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>CAS Chemical LLC</h3>
+        <p>Premium raw ingredients for cosmetic formulators, indie brands, and makers who care about what goes into their products.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a onclick="showPage('home')">Home</a></li>
+          <li><a onclick="showPage('about')">About</a></li>
+          <li><a onclick="showPage('products')">Products</a></li>
+          <li><a onclick="showPage('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a>Shipping info</a></li>
+          <li><a>Returns</a></li>
+          <li><a onclick="showPage('contact')">COA requests</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a>Privacy policy</a></li>
+          <li><a>Terms of service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 CAS Chemical LLC. All rights reserved.</span>
+    </div>
+  </footer>
+</div>
+
+<!-- CONTACT PAGE -->
+<div class="page" id="page-contact">
+  <style>
+    .contact-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .contact-info h1 { font-size: clamp(2.2rem, 4vw, 3rem); margin-bottom: 1rem; }
+    .contact-info p { font-size: 1rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 2rem; }
+    .contact-detail {
+      display: flex; align-items: flex-start; gap: 0.85rem;
+      padding: 1rem 0; border-bottom: 1px solid var(--border);
+    }
+    .contact-detail:first-of-type { border-top: 1px solid var(--border); }
+    .contact-detail-icon {
+      width: 36px; height: 36px; background: var(--accent-bg);
+      border-radius: 8px; display: flex; align-items: center;
+      justify-content: center; font-size: 1rem; flex-shrink: 0; margin-top: 2px;
+    }
+    .contact-detail-label { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.2rem; }
+    .contact-detail-value { font-size: 0.95rem; color: var(--text-dark); }
+    .contact-form-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: 20px; padding: 2.5rem;
+    }
+    .contact-form-card h2 { font-size: 1.5rem; margin-bottom: 0.4rem; }
+    .contact-form-card .form-subhead { font-size: 0.875rem; color: var(--text-mid); margin-bottom: 2rem; }
+    .form-row { margin-bottom: 1.25rem; }
+    .form-row label {
+      display: block; font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text-mid); margin-bottom: 0.45rem;
+    }
+    .form-row input, .form-row select, .form-row textarea {
+      width: 100%; padding: 0.75rem 1rem;
+      border: 1px solid var(--border); border-radius: 10px;
+      font-family: var(--sans); font-size: 0.9rem; color: var(--text-dark);
+      background: var(--cream); outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
+      border-color: var(--accent-green); background: white;
+    }
+    .form-row textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
+    .form-row-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-submit {
+      width: 100%; background: var(--accent); color: white;
+      border: none; border-radius: 100px; padding: 0.9rem 2rem;
+      font-family: var(--sans); font-size: 0.9rem; font-weight: 500;
+      cursor: pointer; transition: background 0.2s, transform 0.15s;
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+    }
+    .form-submit:hover:not(:disabled) { background: var(--accent-light); transform: translateY(-1px); }
+    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .form-success {
+      display: none; text-align: center; padding: 2rem 1rem;
+    }
+    .form-success.visible { display: block; }
+    .success-icon {
+      width: 56px; height: 56px; background: var(--accent-green-bg);
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 1.5rem; margin: 0 auto 1.25rem;
+    }
+    .form-success h3 { font-size: 1.4rem; margin-bottom: 0.6rem; }
+    .form-success p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+    .email-preview {
+      background: var(--cream); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.25rem; margin-top: 1.5rem;
+      text-align: left;
+    }
+    .email-preview-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.75rem; }
+    .email-preview-content { font-size: 0.85rem; color: var(--text-mid); line-height: 1.75; white-space: pre-wrap; }
+    .email-preview-content.loading { color: var(--text-light); font-style: italic; }
+    @media (max-width: 1024px) {
+      .contact-wrap { grid-template-columns: 1fr; padding: 3rem 2rem; gap: 2.5rem; }
+      .form-row-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <span class="section-tag">Contact</span>
+      <h1>Let's talk ingredients</h1>
+      <p>Whether you have a question about a specific ingredient, need help with a wholesale order, or just want to say hello — we'd love to hear from you. We aim to reply within one business day.</p>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">✉️</div>
+        <div>
+          <div class="contact-detail-label">Email us</div>
+          <div class="contact-detail-value">hello@caschemicalllc.com</div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📦</div>
+        <div>
+          <div class="contact-detail-label">Orders & shipping</div>
+          <div class="contact-detail-value">orders@caschemicalllc.com</div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">🏭</div>
+        <div>
+          <div class="contact-detail-label">Wholesale enquiries</div>
+          <div class="contact-detail-value">wholesale@caschemicalllc.com</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-card">
+      <div id="contact-form-inner">
+        <h2>Send us a message</h2>
+        <p class="form-subhead">Fill in the form and we'll be in touch soon. You'll receive a confirmation email right away.</p>
+
+        <div class="form-row-grid">
+          <div class="form-row">
+            <label for="cf-name">Your name</label>
+            <input type="text" id="cf-name" placeholder="Jane Smith">
+          </div>
+          <div class="form-row">
+            <label for="cf-email">Email address</label>
+            <input type="email" id="cf-email" placeholder="jane@example.com">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="cf-subject">Subject</label>
+          <select id="cf-subject">
+            <option value="">Select a topic...</option>
+            <option value="product">Product question</option>
+            <option value="order">Order or shipping</option>
+            <option value="wholesale">Wholesale / bulk order</option>
+            <option value="coa">Certificate of Analysis request</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" placeholder="Tell us what you're working on or what you need..."></textarea>
+        </div>
+
+        <div id="form-error" style="display:none; color:#b94a3a; font-size:0.85rem; margin-bottom:1rem; padding:0.65rem 1rem; background:#fdf0ee; border-radius:8px; border:1px solid #f5c8c2;"></div>
+
+        <button class="form-submit" id="cf-submit" onclick="submitContactForm()">
+          <span id="submit-label">Send message</span>
+        </button>
+      </div>
+
+      <div class="form-success" id="contact-success">
+        <div class="success-icon">✓</div>
+        <h3>Message received!</h3>
+        <p>Thanks for reaching out. We've sent a confirmation to your inbox and will get back to you as soon as possible — usually within one business day.</p>
+        <div class="email-preview" id="email-preview-box">
+          <div class="email-preview-label">Your confirmation email</div>
+          <div class="email-preview-content loading" id="email-preview-text">Generating your confirmation email...</div>
+        </div>
+        <button onclick="resetContactForm()" style="margin-top:1.5rem; background:none; border:1px solid var(--border); border-radius:100px; padding:0.55rem 1.25rem; font-family:var(--sans); font-size:0.82rem; color:var(--text-mid); cursor:pointer;">Send another message</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>CAS Chemical LLC</h3>
+        <p>Premium raw ingredients for cosmetic formulators, indie brands, and makers who care about what goes into their products.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a onclick="showPage('home')">Home</a></li>
+          <li><a onclick="showPage('about')">About</a></li>
+          <li><a onclick="showPage('products')">Products</a></li>
+          <li><a onclick="showPage('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a>Shipping info</a></li>
+          <li><a>Returns</a></li>
+          <li><a onclick="showPage('contact')">COA requests</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a>Privacy policy</a></li>
+          <li><a>Terms of service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 CAS Chemical LLC. All rights reserved.</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+  function showPage(name) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + name).classList.add('active');
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    const navEl = document.getElementById('nav-' + name);
+    if (navEl) navEl.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return false;
+  }
+
+  function toggleFAQ(btn) {
+    const item = btn.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+
+  function filterProducts(btn, cat) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'block' : 'none';
+    });
+  }
+
+  async function submitContactForm() {
+    const name = document.getElementById('cf-name').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+    const subject = document.getElementById('cf-subject').value;
+    const message = document.getElementById('cf-message').value.trim();
+    const errBox = document.getElementById('form-error');
+    const btn = document.getElementById('cf-submit');
+    const label = document.getElementById('submit-label');
+
+    errBox.style.display = 'none';
+
+    if (!name || !email || !subject || !message) {
+      errBox.textContent = 'Please fill in all fields before sending.';
+      errBox.style.display = 'block';
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      errBox.textContent = 'Please enter a valid email address.';
+      errBox.style.display = 'block';
+      return;
+    }
+
+    btn.disabled = true;
+    label.textContent = 'Sending...';
+
+    // Show success state immediately for good UX
+    document.getElementById('contact-form-inner').style.display = 'none';
+    const successEl = document.getElementById('contact-success');
+    successEl.classList.add('visible');
+
+    // Generate the confirmation email copy using Claude
+    const subjectLabels = {
+      product: 'product question',
+      order: 'order or shipping enquiry',
+      wholesale: 'wholesale / bulk order enquiry',
+      coa: 'Certificate of Analysis request',
+      other: 'general enquiry'
+    };
+
+    try {
+      const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 1000,
+          messages: [{
+            role: 'user',
+            content: `Write a warm, professional auto-reply confirmation email for a cosmetics raw ingredients company called CAS Chemical LLC The customer's name is "${name}", their topic is "${subjectLabels[subject] || 'general enquiry'}", and their message was: "${message}".
+
+The email should:
+- Be addressed to ${name} by first name
+- Confirm we have received their message
+- Reference their specific topic briefly and naturally
+- Promise a reply within one business day
+- Be warm and human, not robotic
+- End with "Warm regards, The CAS Chemical LLC Team"
+- Be 3-5 short paragraphs
+- Use plain text only (no markdown, no asterisks, no bullet points)
+
+Return ONLY the email body text, starting directly with "Hi ${name.split(' ')[0]}," — no subject line, no preamble.`
+          }]
+        })
+      });
+
+      const data = await response.json();
+      const emailText = data.content && data.content[0] ? data.content[0].text : null;
+
+      if (emailText) {
+        document.getElementById('email-preview-text').textContent = emailText;
+        document.getElementById('email-preview-text').classList.remove('loading');
+      } else {
+        document.getElementById('email-preview-text').textContent = `Hi ${name.split(' ')[0]},\n\nThank you for getting in touch with CAS Chemical LLC. We have received your message and will get back to you as soon as possible — usually within one business day.\n\nWarm regards,\nThe CAS Chemical LLC Team`;
+        document.getElementById('email-preview-text').classList.remove('loading');
+      }
+    } catch (e) {
+      document.getElementById('email-preview-text').textContent = `Hi ${name.split(' ')[0]},\n\nThank you for getting in touch with CAS Chemical LLC. We have received your message and will get back to you as soon as possible — usually within one business day.\n\nWarm regards,\nThe CAS Chemical LLC Team`;
+      document.getElementById('email-preview-text').classList.remove('loading');
+    }
+  }
+
+  function resetContactForm() {
+    document.getElementById('cf-name').value = '';
+    document.getElementById('cf-email').value = '';
+    document.getElementById('cf-subject').value = '';
+    document.getElementById('cf-message').value = '';
+    document.getElementById('contact-success').classList.remove('visible');
+    document.getElementById('contact-form-inner').style.display = 'block';
+    document.getElementById('cf-submit').disabled = false;
+    document.getElementById('submit-label').textContent = 'Send message';
+    document.getElementById('email-preview-text').textContent = 'Generating your confirmation email...';
+    document.getElementById('email-preview-text').classList.add('loading');
+  }
+</script>
+</body>
+</html>
