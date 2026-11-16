@@ -897,93 +897,182 @@
     padding: 0 4rem 5rem;
   }
 
-  .products-grid-inner {
+  .ingredients-list {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
   }
 
-  .product-card {
+  .ingredient-category {
+    margin-bottom: 1.5rem;
+  }
+
+  .ingredient-cat-heading {
+    font-family: var(--sans);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .ingredient-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+    gap: 0.9rem;
+  }
+
+  .ingredient-card {
+    position: relative;
     background: white;
     border: 1px solid var(--border);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 14px;
+    padding: 1.15rem 0.9rem 1.3rem;
+    text-align: center;
     cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
   }
 
-  .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,0.07); }
-
-  .product-visual {
-    height: 160px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.8rem;
+  .ingredient-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    border-color: var(--accent-green);
   }
 
-  .product-body {
-    padding: 1.25rem 1.25rem 1.5rem;
-    border-top: 1px solid var(--border);
+  .ingredient-icon {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 0.55rem;
+    transition: transform 0.25s;
   }
 
-  .product-tag {
-    font-size: 0.7rem;
+  .ingredient-card:hover .ingredient-icon { transform: scale(1.18) rotate(-6deg); }
+
+  .ingredient-name {
+    font-size: 0.8rem;
+    color: var(--text-mid);
+    line-height: 1.35;
+    transition: color 0.2s;
+  }
+
+  .ingredient-card:hover .ingredient-name { color: var(--text-dark); }
+
+  .ingredient-card-cta {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    background: var(--accent-green-bg);
+    color: var(--accent);
+    font-size: 0.66rem;
     font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-light);
-    margin-bottom: 0.4rem;
+    letter-spacing: 0.02em;
+    padding: 0.4rem 0;
+    transform: translateY(100%);
+    transition: transform 0.2s;
   }
 
-  .product-body h3 {
+  .ingredient-card:hover .ingredient-card-cta { transform: translateY(0); }
+
+  .catalogue-cta {
+    text-align: center;
+    max-width: 620px;
+    margin: 1rem auto 0;
+    padding: 2.5rem;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+  }
+
+  .catalogue-cta h3 {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .catalogue-cta p {
+    color: var(--text-mid);
+    margin-bottom: 1.5rem;
+  }
+
+  /* INGREDIENT DETAIL PAGE */
+  .ingredient-detail-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5rem 4rem 6rem;
+  }
+
+  .ingredient-back {
+    background: none;
+    border: none;
+    color: var(--text-mid);
+    font-size: 0.85rem;
+    font-family: var(--sans);
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.2s;
+  }
+
+  .ingredient-back:hover { color: var(--text-dark); }
+
+  .ingredient-detail-name {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    margin: 0.75rem 0 2rem;
+  }
+
+  .ingredient-detail-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .ingredient-detail-main h3 {
     font-family: var(--sans);
     font-size: 0.95rem;
     font-weight: 500;
-    margin-bottom: 0.4rem;
+    color: var(--text-dark);
+    margin-bottom: 0.6rem;
   }
 
-  .product-body p {
+  .ingredient-detail-main h3:not(:first-child) { margin-top: 2rem; }
+
+  .ingredient-placeholder-text {
+    color: var(--text-light);
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .ingredient-placeholder-hint {
+    font-size: 0.75rem;
+    color: var(--sand-mid);
+    margin-top: 0.4rem;
+  }
+
+  .ingredient-detail-side {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    height: fit-content;
+  }
+
+  .ingredient-detail-icon {
+    font-size: 2.8rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .ingredient-detail-side p {
     font-size: 0.82rem;
     color: var(--text-mid);
     line-height: 1.6;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
   }
-
-  .product-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .product-price {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--text-dark);
-  }
-
-  .product-price span {
-    font-size: 0.75rem;
-    font-weight: 400;
-    color: var(--text-light);
-  }
-
-  .btn-add {
-    font-size: 0.78rem;
-    font-weight: 500;
-    color: var(--accent-green);
-    border: 1px solid var(--accent-green);
-    background: none;
-    border-radius: 100px;
-    padding: 0.35rem 0.85rem;
-    cursor: pointer;
-    font-family: var(--sans);
-    transition: all 0.2s;
-  }
-
-  .btn-add:hover { background: var(--accent-green); color: white; }
 
   /* Utility */
   .max-w { max-width: 1200px; margin: 0 auto; }
@@ -999,9 +1088,38 @@
     .testimonials-grid { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr 1fr; }
     .about-hero { grid-template-columns: 1fr; }
-    .products-grid-inner { grid-template-columns: repeat(2, 1fr); }
     .about-values { padding: 3rem 2rem; }
+    .values-grid { grid-template-columns: 1fr 1fr; }
     .products-header, .products-filters, .products-grid-section { padding-left: 2rem; padding-right: 2rem; }
+    .ingredient-detail-wrap { padding: 4rem 2rem 5rem; }
+    .ingredient-detail-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    nav { flex-wrap: wrap; height: auto; padding: 0.85rem 1.25rem; row-gap: 0.6rem; }
+    .nav-logo { font-size: 1.15rem; }
+    .nav-links { width: 100%; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .nav-links a { font-size: 0.8rem; }
+    .nav-cta { padding: 0.45rem 1rem; }
+    section { padding: 3.5rem 1.25rem; }
+    .hero { padding: 3rem 1.25rem 2.5rem; }
+    .hero h1 { font-size: clamp(2.1rem, 9vw, 2.6rem); }
+    .hero-actions { flex-wrap: wrap; }
+    .benefits-grid { grid-template-columns: 1fr; }
+    .categories-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    .about-hero { padding: 3.5rem 1.25rem 2.5rem; }
+    .about-values { padding: 2.5rem 1.25rem; }
+    .values-grid { grid-template-columns: 1fr; }
+    .products-header, .products-filters, .products-grid-section { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .products-filters { gap: 0.4rem; }
+    .filter-btn { font-size: 0.76rem; padding: 0.4rem 0.85rem; }
+    .ingredient-cards { grid-template-columns: repeat(auto-fill, minmax(105px, 1fr)); gap: 0.6rem; }
+    .ingredient-card { padding: 0.9rem 0.6rem 1.1rem; }
+    .ingredient-icon { font-size: 1.3rem; }
+    .ingredient-name { font-size: 0.74rem; }
+    .catalogue-cta { padding: 1.75rem 1.25rem; }
+    .ingredient-detail-wrap { padding: 3rem 1.25rem 4rem; }
   }
 </style>
 </head>
@@ -1344,162 +1462,435 @@
   </div>
 
   <div class="products-filters">
-    <button class="filter-btn active" onclick="filterProducts(this, 'all')">All ingredients</button>
-    <button class="filter-btn" onclick="filterProducts(this, 'oil')">Oils & Butters</button>
-    <button class="filter-btn" onclick="filterProducts(this, 'clay')">Clays & Minerals</button>
-    <button class="filter-btn" onclick="filterProducts(this, 'active')">Actives</button>
-    <button class="filter-btn" onclick="filterProducts(this, 'chemical')">Emulsifiers & Chemicals</button>
+    <button class="filter-btn active" onclick="filterCategory(this, 'all')">All ingredients</button>
+    <button class="filter-btn" onclick="filterCategory(this, 'acids-actives')">Acids & Actives</button>
+    <button class="filter-btn" onclick="filterCategory(this, 'antiseptics')">Antiseptics</button>
+    <button class="filter-btn" onclick="filterCategory(this, 'butters-waxes')">Butters & Waxes</button>
+    <button class="filter-btn" onclick="filterCategory(this, 'clays')">Clays</button>
+    <button class="filter-btn" onclick="filterCategory(this, 'emollients')">Emollients & Humectants</button>
+    <button class="filter-btn" onclick="filterCategory(this, 'excipients')">Excipients & Tablet Aids</button>
+    <button class="filter-btn" onclick="filterCategory(this, 'fatty-acids')">Fatty Acids</button>
+    <button class="filter-btn" onclick="filterCategory(this, 'mcts')">MCT's</button>
+    <button class="filter-btn" onclick="filterCategory(this, 'nutritional')">Nutritional</button>
+    <button class="filter-btn" onclick="filterCategory(this, 'oils')">Oils</button>
+    <button class="filter-btn" onclick="filterCategory(this, 'peptides')">Peptides</button>
+    <button class="filter-btn" onclick="filterCategory(this, 'preservatives')">Preservatives</button>
+    <button class="filter-btn" onclick="filterCategory(this, 'proteins')">Proteins</button>
+    <button class="filter-btn" onclick="filterCategory(this, 'salts-sugars')">Salts & Sugars</button>
+    <button class="filter-btn" onclick="filterCategory(this, 'sunscreen')">Sunscreen</button>
+    <button class="filter-btn" onclick="filterCategory(this, 'surfactants')">Surfactants & Emulsifiers</button>
+    <button class="filter-btn" onclick="filterCategory(this, 'vitamins')">Vitamins</button>
   </div>
 
   <div class="products-grid-section">
-    <div class="products-grid-inner" id="products-grid">
-      <!-- Oils -->
-      <div class="product-card" data-cat="oil">
-        <div class="product-visual" style="background: #FEF7E8;">🫙</div>
-        <div class="product-body">
-          <div class="product-tag">Carrier Oil</div>
-          <h3>Jojoba Oil — Cold Pressed</h3>
-          <p>Golden, unrefined jojoba with a long shelf life. Excellent for leave-on skin and hair formulations.</p>
-          <div class="product-footer">
-            <div class="product-price">$XX.XX <span>/ 100ml</span></div>
-            <button class="btn-add">Add to cart</button>
-          </div>
+    <div class="ingredients-list" id="ingredients-list">
+
+      <section class="ingredient-category" data-cat="acids-actives">
+        <h2 class="ingredient-cat-heading">Acids & Actives</h2>
+        <div class="ingredient-cards">
+          <div class="ingredient-card" onclick="showIngredient('Alpha Lipoic Acid', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Alpha Lipoic Acid</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Apple Cider Vinegar', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Apple Cider Vinegar</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Arbutin', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Arbutin</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Ascorbic Acid', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Ascorbic Acid</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Ascorbyl Glucoside', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Ascorbyl Glucoside</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Azelaic Acid', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Azelaic Acid</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Behenic Acid', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Behenic Acid</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Benzoic Acid', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Benzoic Acid</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Calamine', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Calamine</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Citric Acid', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Citric Acid</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Colloidal Oatmeal', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Colloidal Oatmeal</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Fumaric Acid', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Fumaric Acid</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Hyaluronic Acid', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Hyaluronic Acid</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Kojic Acid', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Kojic Acid</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Lactic Acid', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Lactic Acid</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Malic Acid', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Malic Acid</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Mandelic Acid', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Mandelic Acid</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Methyl Salicylate', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Methyl Salicylate</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Oleic Acid', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Oleic Acid</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Phosphoric Acid', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Phosphoric Acid</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Pramoxine Hydrochloride', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Pramoxine Hydrochloride</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Salicylic Acid', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Salicylic Acid</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Tartaric Acid', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Tartaric Acid</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Urea USP', 'acids-actives')"><span class="ingredient-icon">🧪</span><div class="ingredient-name">Urea USP</div><div class="ingredient-card-cta">Request pricing →</div></div>
         </div>
+      </section>
+
+      <section class="ingredient-category" data-cat="antiseptics">
+        <h2 class="ingredient-cat-heading">Antiseptics</h2>
+        <div class="ingredient-cards">
+          <div class="ingredient-card" onclick="showIngredient('Benzalkonium Chloride 50% Solution', 'antiseptics')"><span class="ingredient-icon">🧴</span><div class="ingredient-name">Benzalkonium Chloride 50% Solution</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Benzethonium Chloride', 'antiseptics')"><span class="ingredient-icon">🧴</span><div class="ingredient-name">Benzethonium Chloride</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Cetrimide Powder', 'antiseptics')"><span class="ingredient-icon">🧴</span><div class="ingredient-name">Cetrimide Powder</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Strong Cetrimide 40% Solution', 'antiseptics')"><span class="ingredient-icon">🧴</span><div class="ingredient-name">Strong Cetrimide 40% Solution</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Cetylpyridinium Chloride', 'antiseptics')"><span class="ingredient-icon">🧴</span><div class="ingredient-name">Cetylpyridinium Chloride</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Chlorhexidine Base', 'antiseptics')"><span class="ingredient-icon">🧴</span><div class="ingredient-name">Chlorhexidine Base</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Mecetronium Ethosulfate', 'antiseptics')"><span class="ingredient-icon">🧴</span><div class="ingredient-name">Mecetronium Ethosulfate</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Octenidine Hydrochloride', 'antiseptics')"><span class="ingredient-icon">🧴</span><div class="ingredient-name">Octenidine Hydrochloride</div><div class="ingredient-card-cta">Request pricing →</div></div>
+        </div>
+      </section>
+
+      <section class="ingredient-category" data-cat="butters-waxes">
+        <h2 class="ingredient-cat-heading">Butters & Waxes</h2>
+        <div class="ingredient-cards">
+          <div class="ingredient-card" onclick="showIngredient('Acai Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Acai Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Almond Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Almond Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Aloe Vera Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Aloe Vera Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Apricot Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Apricot Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Argan Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Argan Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Avocado Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Avocado Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Babassu Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Babassu Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Baobab Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Baobab Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Blueberry Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Blueberry Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Brazil Nut Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Brazil Nut Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Cocoa Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Cocoa Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Cupuacu Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Cupuacu Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Grape Seed Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Grape Seed Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Hemp Seed Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Hemp Seed Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Illipe Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Illipe Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Jojoba Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Jojoba Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Kokum Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Kokum Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Lavender Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Lavender Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Mango Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Mango Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Marula Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Marula Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Monoi Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Monoi Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Moringa Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Moringa Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Neem Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Neem Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Oat Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Oat Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Olive Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Olive Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Sal Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Sal Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Shea Butter', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Shea Butter</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Beeswax', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Beeswax</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Lanolin Wax', 'butters-waxes')"><span class="ingredient-icon">🧈</span><div class="ingredient-name">Lanolin Wax</div><div class="ingredient-card-cta">Request pricing →</div></div>
+        </div>
+      </section>
+
+      <section class="ingredient-category" data-cat="clays">
+        <h2 class="ingredient-cat-heading">Clays</h2>
+        <div class="ingredient-cards">
+          <div class="ingredient-card" onclick="showIngredient('Bentonite', 'clays')"><span class="ingredient-icon">🪨</span><div class="ingredient-name">Bentonite</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Diatomaceous Earth', 'clays')"><span class="ingredient-icon">🪨</span><div class="ingredient-name">Diatomaceous Earth</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('French Black', 'clays')"><span class="ingredient-icon">🪨</span><div class="ingredient-name">French Black</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('French Green', 'clays')"><span class="ingredient-icon">🪨</span><div class="ingredient-name">French Green</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Glacial', 'clays')"><span class="ingredient-icon">🪨</span><div class="ingredient-name">Glacial</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Green Illite', 'clays')"><span class="ingredient-icon">🪨</span><div class="ingredient-name">Green Illite</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Kaolin Coral', 'clays')"><span class="ingredient-icon">🪨</span><div class="ingredient-name">Kaolin Coral</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Kaolin White', 'clays')"><span class="ingredient-icon">🪨</span><div class="ingredient-name">Kaolin White</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Multani Mitti', 'clays')"><span class="ingredient-icon">🪨</span><div class="ingredient-name">Multani Mitti</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Red Illite', 'clays')"><span class="ingredient-icon">🪨</span><div class="ingredient-name">Red Illite</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Rhassoul', 'clays')"><span class="ingredient-icon">🪨</span><div class="ingredient-name">Rhassoul</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Sea', 'clays')"><span class="ingredient-icon">🪨</span><div class="ingredient-name">Sea</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Yellow Illite', 'clays')"><span class="ingredient-icon">🪨</span><div class="ingredient-name">Yellow Illite</div><div class="ingredient-card-cta">Request pricing →</div></div>
+        </div>
+      </section>
+
+      <section class="ingredient-category" data-cat="emollients">
+        <h2 class="ingredient-cat-heading">Emollients & Humectants</h2>
+        <div class="ingredient-cards">
+          <div class="ingredient-card" onclick="showIngredient('CO-Q10', 'emollients')"><span class="ingredient-icon">💧</span><div class="ingredient-name">CO-Q10</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('DL-Panthenol', 'emollients')"><span class="ingredient-icon">💧</span><div class="ingredient-name">DL-Panthenol</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Isopropyl Myristate', 'emollients')"><span class="ingredient-icon">💧</span><div class="ingredient-name">Isopropyl Myristate</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Isopropyl Palmitate', 'emollients')"><span class="ingredient-icon">💧</span><div class="ingredient-name">Isopropyl Palmitate</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Myristyl Myristate', 'emollients')"><span class="ingredient-icon">💧</span><div class="ingredient-name">Myristyl Myristate</div><div class="ingredient-card-cta">Request pricing →</div></div>
+        </div>
+      </section>
+
+      <section class="ingredient-category" data-cat="excipients">
+        <h2 class="ingredient-cat-heading">Excipients & Tablet Aids</h2>
+        <div class="ingredient-cards">
+          <div class="ingredient-card" onclick="showIngredient('Dicalcium Phosphate Di-Pac', 'excipients')"><span class="ingredient-icon">💊</span><div class="ingredient-name">Dicalcium Phosphate Di-Pac</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Lactose (Anhydrous / Monohydrate / DT)', 'excipients')"><span class="ingredient-icon">💊</span><div class="ingredient-name">Lactose (Anhydrous / Monohydrate / DT)</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Magnesium Stearate', 'excipients')"><span class="ingredient-icon">💊</span><div class="ingredient-name">Magnesium Stearate</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Mannitol', 'excipients')"><span class="ingredient-icon">💊</span><div class="ingredient-name">Mannitol</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Microcrystalline Cellulose', 'excipients')"><span class="ingredient-icon">💊</span><div class="ingredient-name">Microcrystalline Cellulose</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Myristyl Stearate', 'excipients')"><span class="ingredient-icon">💊</span><div class="ingredient-name">Myristyl Stearate</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Rose', 'excipients')"><span class="ingredient-icon">💊</span><div class="ingredient-name">Rose</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Sorbitol', 'excipients')"><span class="ingredient-icon">💊</span><div class="ingredient-name">Sorbitol</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Stearates', 'excipients')"><span class="ingredient-icon">💊</span><div class="ingredient-name">Stearates</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Stearic Acid', 'excipients')"><span class="ingredient-icon">💊</span><div class="ingredient-name">Stearic Acid</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Sugar', 'excipients')"><span class="ingredient-icon">💊</span><div class="ingredient-name">Sugar</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Trimethylolpropane', 'excipients')"><span class="ingredient-icon">💊</span><div class="ingredient-name">Trimethylolpropane</div><div class="ingredient-card-cta">Request pricing →</div></div>
+        </div>
+      </section>
+
+      <section class="ingredient-category" data-cat="fatty-acids">
+        <h2 class="ingredient-cat-heading">Fatty Acids</h2>
+        <div class="ingredient-cards">
+          <div class="ingredient-card" onclick="showIngredient('Cholesterol', 'fatty-acids')"><span class="ingredient-icon">🫧</span><div class="ingredient-name">Cholesterol</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('DHA', 'fatty-acids')"><span class="ingredient-icon">🫧</span><div class="ingredient-name">DHA</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Ethyl Oleate', 'fatty-acids')"><span class="ingredient-icon">🫧</span><div class="ingredient-name">Ethyl Oleate</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('GLA', 'fatty-acids')"><span class="ingredient-icon">🫧</span><div class="ingredient-name">GLA</div><div class="ingredient-card-cta">Request pricing →</div></div>
+        </div>
+      </section>
+
+      <section class="ingredient-category" data-cat="mcts">
+        <h2 class="ingredient-cat-heading">MCT's</h2>
+        <div class="ingredient-cards">
+          <div class="ingredient-card" onclick="showIngredient('Caprylic/Capric Triglyceride (60/40)', 'mcts')"><span class="ingredient-icon">🥥</span><div class="ingredient-name">Caprylic/Capric Triglyceride (60/40)</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Caprylic/Capric Triglyceride (70/30)', 'mcts')"><span class="ingredient-icon">🥥</span><div class="ingredient-name">Caprylic/Capric Triglyceride (70/30)</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Caprylic/Capric/Lauric Triglyceride', 'mcts')"><span class="ingredient-icon">🥥</span><div class="ingredient-name">Caprylic/Capric/Lauric Triglyceride</div><div class="ingredient-card-cta">Request pricing →</div></div>
+        </div>
+      </section>
+
+      <section class="ingredient-category" data-cat="nutritional">
+        <h2 class="ingredient-cat-heading">Nutritional</h2>
+        <div class="ingredient-cards">
+          <div class="ingredient-card" onclick="showIngredient('Banaba', 'nutritional')"><span class="ingredient-icon">🌱</span><div class="ingredient-name">Banaba</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Berberine', 'nutritional')"><span class="ingredient-icon">🌱</span><div class="ingredient-name">Berberine</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('EGCG (Green Tea)', 'nutritional')"><span class="ingredient-icon">🌱</span><div class="ingredient-name">EGCG (Green Tea)</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('GABA', 'nutritional')"><span class="ingredient-icon">🌱</span><div class="ingredient-name">GABA</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Ginkgo Biloba', 'nutritional')"><span class="ingredient-icon">🌱</span><div class="ingredient-name">Ginkgo Biloba</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Glucosamine', 'nutritional')"><span class="ingredient-icon">🌱</span><div class="ingredient-name">Glucosamine</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Glutamine', 'nutritional')"><span class="ingredient-icon">🌱</span><div class="ingredient-name">Glutamine</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Glutathione', 'nutritional')"><span class="ingredient-icon">🌱</span><div class="ingredient-name">Glutathione</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Inulin', 'nutritional')"><span class="ingredient-icon">🌱</span><div class="ingredient-name">Inulin</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Lutein', 'nutritional')"><span class="ingredient-icon">🌱</span><div class="ingredient-name">Lutein</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Melatonin', 'nutritional')"><span class="ingredient-icon">🌱</span><div class="ingredient-name">Melatonin</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Methylsulfonylmethane (MSM)', 'nutritional')"><span class="ingredient-icon">🌱</span><div class="ingredient-name">Methylsulfonylmethane (MSM)</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('N-acetylcysteine (NAC)', 'nutritional')"><span class="ingredient-icon">🌱</span><div class="ingredient-name">N-acetylcysteine (NAC)</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Potassium Carbonate', 'nutritional')"><span class="ingredient-icon">🌱</span><div class="ingredient-name">Potassium Carbonate</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Quercetin', 'nutritional')"><span class="ingredient-icon">🌱</span><div class="ingredient-name">Quercetin</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Resveratrol', 'nutritional')"><span class="ingredient-icon">🌱</span><div class="ingredient-name">Resveratrol</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Rhodiola Rosea', 'nutritional')"><span class="ingredient-icon">🌱</span><div class="ingredient-name">Rhodiola Rosea</div><div class="ingredient-card-cta">Request pricing →</div></div>
+        </div>
+      </section>
+
+      <section class="ingredient-category" data-cat="oils">
+        <h2 class="ingredient-cat-heading">Oils</h2>
+        <div class="ingredient-cards">
+          <div class="ingredient-card" onclick="showIngredient('Abyssinian (Crambe) Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Abyssinian (Crambe) Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Acai Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Acai Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Ahiflower Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Ahiflower Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Apricot Kernel Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Apricot Kernel Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Argan Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Argan Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Avocado Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Avocado Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Babassu Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Babassu Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Baobab Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Baobab Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Black Cumin Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Black Cumin Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Blackberry Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Blackberry Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Blueberry Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Blueberry Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Borage Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Borage Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Brazil Nut Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Brazil Nut Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Buriti Fruit Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Buriti Fruit Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Cacay (Kahai) Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Cacay (Kahai) Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Camellia Seed Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Camellia Seed Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Camelina Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Camelina Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Canola Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Canola Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Carrot Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Carrot Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Castor Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Castor Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Cetyl Palmitate', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Cetyl Palmitate</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Cherry Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Cherry Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Chia Seed Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Chia Seed Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Coconut Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Coconut Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Corn Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Corn Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Cottonseed Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Cottonseed Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Cranberry Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Cranberry Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Cupuacu Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Cupuacu Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Elderberry Seed Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Elderberry Seed Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Evening Primrose Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Evening Primrose Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Fish Oil (All Specs)', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Fish Oil (All Specs)</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Flaxseed Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Flaxseed Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Glycerin', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Glycerin</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Grapeseed Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Grapeseed Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Hazelnut Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Hazelnut Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Hemp Seed Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Hemp Seed Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Jojoba Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Jojoba Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Kiwi Seed Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Kiwi Seed Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Kukui Nut Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Kukui Nut Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Lanolin Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Lanolin Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Macadamia Nut Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Macadamia Nut Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Marula Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Marula Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Meadowfoam Seed Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Meadowfoam Seed Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Mineral Oil / Petrolatum', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Mineral Oil / Petrolatum</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Monoi Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Monoi Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Moringa Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Moringa Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Murumuru Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Murumuru Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Neem Seed Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Neem Seed Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Oat Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Oat Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Olive Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Olive Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Palm Kernel Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Palm Kernel Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Passion Fruit Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Passion Fruit Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Peanut Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Peanut Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Pecan Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Pecan Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Pequi Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Pequi Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Perilla Seed Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Perilla Seed Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Pistachio Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Pistachio Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Pomegranate Seed Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Pomegranate Seed Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Prickly Pear Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Prickly Pear Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Pumpkin Seed Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Pumpkin Seed Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Raspberry Seed Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Raspberry Seed Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Rice Bran Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Rice Bran Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Rosehip Seed Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Rosehip Seed Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Sacha Inchi Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Sacha Inchi Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Safflower Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Safflower Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Sea Buckthorn Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Sea Buckthorn Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Sesame Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Sesame Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Shea Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Shea Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Soybean Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Soybean Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Squalane Oil (Olive-derived)', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Squalane Oil (Olive-derived)</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Strawberry Seed Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Strawberry Seed Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Sunflower Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Sunflower Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Sweet Almond Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Sweet Almond Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Tamanu Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Tamanu Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Tea Tree Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Tea Tree Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Tomato Seed Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Tomato Seed Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Walnut Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Walnut Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Watermelon Seed Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Watermelon Seed Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Wheat Germ Oil', 'oils')"><span class="ingredient-icon">🫙</span><div class="ingredient-name">Wheat Germ Oil</div><div class="ingredient-card-cta">Request pricing →</div></div>
+        </div>
+      </section>
+
+      <section class="ingredient-category" data-cat="peptides">
+        <h2 class="ingredient-cat-heading">Peptides</h2>
+        <div class="ingredient-cards">
+          <div class="ingredient-card" onclick="showIngredient('Acetyl Hexapeptide-8 (SpecPed® AH8P)', 'peptides')"><span class="ingredient-icon">🧬</span><div class="ingredient-name">Acetyl Hexapeptide-8 (SpecPed® AH8P)</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Acetyl Tetrapeptide-5 (SpecPed® AT5P)', 'peptides')"><span class="ingredient-icon">🧬</span><div class="ingredient-name">Acetyl Tetrapeptide-5 (SpecPed® AT5P)</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Biotinoyl Tripeptide-1 (SpecPed® BT1P)', 'peptides')"><span class="ingredient-icon">🧬</span><div class="ingredient-name">Biotinoyl Tripeptide-1 (SpecPed® BT1P)</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Bis(Tripeptide-1) Copper Acetate (SpecPed® GCu21P)', 'peptides')"><span class="ingredient-icon">🧬</span><div class="ingredient-name">Bis(Tripeptide-1) Copper Acetate (SpecPed® GCu21P)</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Copper Tripeptide-1 (SpecPed® GCu11P)', 'peptides')"><span class="ingredient-icon">🧬</span><div class="ingredient-name">Copper Tripeptide-1 (SpecPed® GCu11P)</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Dipeptide Diaminobutyroyl Benzyl (SpecPed® SKE-P)', 'peptides')"><span class="ingredient-icon">🧬</span><div class="ingredient-name">Dipeptide Diaminobutyroyl Benzyl (SpecPed® SKE-P)</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Glutamylamidoethyl Imidazole (SpecPed® GAI)', 'peptides')"><span class="ingredient-icon">🧬</span><div class="ingredient-name">Glutamylamidoethyl Imidazole (SpecPed® GAI)</div><div class="ingredient-card-cta">Request pricing →</div></div>
+        </div>
+      </section>
+
+      <section class="ingredient-category" data-cat="preservatives">
+        <h2 class="ingredient-cat-heading">Preservatives</h2>
+        <div class="ingredient-cards">
+          <div class="ingredient-card" onclick="showIngredient('Benzyl Alcohol', 'preservatives')"><span class="ingredient-icon">🛡️</span><div class="ingredient-name">Benzyl Alcohol</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Potassium Sorbate', 'preservatives')"><span class="ingredient-icon">🛡️</span><div class="ingredient-name">Potassium Sorbate</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Sodium Benzoate', 'preservatives')"><span class="ingredient-icon">🛡️</span><div class="ingredient-name">Sodium Benzoate</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Sodium Diacetate', 'preservatives')"><span class="ingredient-icon">🛡️</span><div class="ingredient-name">Sodium Diacetate</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Sodium Erythorbate', 'preservatives')"><span class="ingredient-icon">🛡️</span><div class="ingredient-name">Sodium Erythorbate</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Sodium Propionate', 'preservatives')"><span class="ingredient-icon">🛡️</span><div class="ingredient-name">Sodium Propionate</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Sorbic Acid', 'preservatives')"><span class="ingredient-icon">🛡️</span><div class="ingredient-name">Sorbic Acid</div><div class="ingredient-card-cta">Request pricing →</div></div>
+        </div>
+      </section>
+
+      <section class="ingredient-category" data-cat="proteins">
+        <h2 class="ingredient-cat-heading">Proteins</h2>
+        <div class="ingredient-cards">
+          <div class="ingredient-card" onclick="showIngredient('Pea Protein', 'proteins')"><span class="ingredient-icon">🥚</span><div class="ingredient-name">Pea Protein</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Soy Protein', 'proteins')"><span class="ingredient-icon">🥚</span><div class="ingredient-name">Soy Protein</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Soy Protein Isolates', 'proteins')"><span class="ingredient-icon">🥚</span><div class="ingredient-name">Soy Protein Isolates</div><div class="ingredient-card-cta">Request pricing →</div></div>
+        </div>
+      </section>
+
+      <section class="ingredient-category" data-cat="salts-sugars">
+        <h2 class="ingredient-cat-heading">Salts & Sugars</h2>
+        <div class="ingredient-cards">
+          <div class="ingredient-card" onclick="showIngredient('Calcium Citrate', 'salts-sugars')"><span class="ingredient-icon">🧂</span><div class="ingredient-name">Calcium Citrate</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('D-Mannose', 'salts-sugars')"><span class="ingredient-icon">🧂</span><div class="ingredient-name">D-Mannose</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Epsom Salt', 'salts-sugars')"><span class="ingredient-icon">🧂</span><div class="ingredient-name">Epsom Salt</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Magnesium Chloride', 'salts-sugars')"><span class="ingredient-icon">🧂</span><div class="ingredient-name">Magnesium Chloride</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Potassium Chloride', 'salts-sugars')"><span class="ingredient-icon">🧂</span><div class="ingredient-name">Potassium Chloride</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Potassium Citrate', 'salts-sugars')"><span class="ingredient-icon">🧂</span><div class="ingredient-name">Potassium Citrate</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Sea Salt', 'salts-sugars')"><span class="ingredient-icon">🧂</span><div class="ingredient-name">Sea Salt</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Sodium Citrate', 'salts-sugars')"><span class="ingredient-icon">🧂</span><div class="ingredient-name">Sodium Citrate</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Sodium Saccharin', 'salts-sugars')"><span class="ingredient-icon">🧂</span><div class="ingredient-name">Sodium Saccharin</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Trimethylolpropane', 'salts-sugars')"><span class="ingredient-icon">🧂</span><div class="ingredient-name">Trimethylolpropane</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Xanthan Gum', 'salts-sugars')"><span class="ingredient-icon">🧂</span><div class="ingredient-name">Xanthan Gum</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Xylitol', 'salts-sugars')"><span class="ingredient-icon">🧂</span><div class="ingredient-name">Xylitol</div><div class="ingredient-card-cta">Request pricing →</div></div>
+        </div>
+      </section>
+
+      <section class="ingredient-category" data-cat="sunscreen">
+        <h2 class="ingredient-cat-heading">Sunscreen</h2>
+        <div class="ingredient-cards">
+          <div class="ingredient-card" onclick="showIngredient('Octocrylene', 'sunscreen')"><span class="ingredient-icon">☀️</span><div class="ingredient-name">Octocrylene</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Titanium Oxide', 'sunscreen')"><span class="ingredient-icon">☀️</span><div class="ingredient-name">Titanium Oxide</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Zinc Oxide', 'sunscreen')"><span class="ingredient-icon">☀️</span><div class="ingredient-name">Zinc Oxide</div><div class="ingredient-card-cta">Request pricing →</div></div>
+        </div>
+      </section>
+
+      <section class="ingredient-category" data-cat="surfactants">
+        <h2 class="ingredient-cat-heading">Surfactants & Emulsifiers</h2>
+        <div class="ingredient-cards">
+          <div class="ingredient-card" onclick="showIngredient('Polysorbate 20', 'surfactants')"><span class="ingredient-icon">🧼</span><div class="ingredient-name">Polysorbate 20</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Polysorbate 60', 'surfactants')"><span class="ingredient-icon">🧼</span><div class="ingredient-name">Polysorbate 60</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Polysorbate 80', 'surfactants')"><span class="ingredient-icon">🧼</span><div class="ingredient-name">Polysorbate 80</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Triisostearate', 'surfactants')"><span class="ingredient-icon">🧼</span><div class="ingredient-name">Triisostearate</div><div class="ingredient-card-cta">Request pricing →</div></div>
+        </div>
+      </section>
+
+      <section class="ingredient-category" data-cat="vitamins">
+        <h2 class="ingredient-cat-heading">Vitamins</h2>
+        <div class="ingredient-cards">
+          <div class="ingredient-card" onclick="showIngredient('Biotin', 'vitamins')"><span class="ingredient-icon">🍊</span><div class="ingredient-name">Biotin</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Vitamin A', 'vitamins')"><span class="ingredient-icon">🍊</span><div class="ingredient-name">Vitamin A</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Vitamin B', 'vitamins')"><span class="ingredient-icon">🍊</span><div class="ingredient-name">Vitamin B</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Vitamin C', 'vitamins')"><span class="ingredient-icon">🍊</span><div class="ingredient-name">Vitamin C</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Vitamin D', 'vitamins')"><span class="ingredient-icon">🍊</span><div class="ingredient-name">Vitamin D</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Vitamin E', 'vitamins')"><span class="ingredient-icon">🍊</span><div class="ingredient-name">Vitamin E</div><div class="ingredient-card-cta">Request pricing →</div></div>
+          <div class="ingredient-card" onclick="showIngredient('Vitamin K', 'vitamins')"><span class="ingredient-icon">🍊</span><div class="ingredient-name">Vitamin K</div><div class="ingredient-card-cta">Request pricing →</div></div>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="catalogue-cta">
+      <h3>Don't see what you need?</h3>
+      <p>Pricing, availability, and COAs are provided on request — get in touch and we'll put a quote together for you.</p>
+      <button class="btn-primary" onclick="showPage('contact')">Contact us for pricing</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>CAS Chemical LLC</h3>
+        <p>Premium raw ingredients for cosmetic formulators, indie brands, and makers who care about what goes into their products.</p>
       </div>
-      <div class="product-card" data-cat="oil">
-        <div class="product-visual" style="background: #FFF4EE;">🌹</div>
-        <div class="product-body">
-          <div class="product-tag">Carrier Oil</div>
-          <h3>Rosehip Seed Oil</h3>
-          <p>Rich in trans-retinoic acid and essential fatty acids. Popular in anti-ageing and scar formulations.</p>
-          <div class="product-footer">
-            <div class="product-price">$XX.XX <span>/ 50ml</span></div>
-            <button class="btn-add">Add to cart</button>
-          </div>
-        </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a onclick="showPage('home')">Home</a></li>
+          <li><a onclick="showPage('about')">About</a></li>
+          <li><a onclick="showPage('products')">Products</a></li>
+          <li><a onclick="showPage('contact')">Contact</a></li>
+        </ul>
       </div>
-      <div class="product-card" data-cat="oil">
-        <div class="product-visual" style="background: #F7F4EE;">🥭</div>
-        <div class="product-body">
-          <div class="product-tag">Butter</div>
-          <h3>Mango Seed Butter</h3>
-          <p>Hard, emollient butter with a melting point near skin temperature. Ideal for balms, body butters, and bars.</p>
-          <div class="product-footer">
-            <div class="product-price">$XX.XX <span>/ 100g</span></div>
-            <button class="btn-add">Add to cart</button>
-          </div>
-        </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a>Shipping info</a></li>
+          <li><a>Returns</a></li>
+          <li><a onclick="showPage('contact')">COA requests</a></li>
+        </ul>
       </div>
-      <!-- Clays -->
-      <div class="product-card" data-cat="clay">
-        <div class="product-visual" style="background: #F5EDE4;">🪨</div>
-        <div class="product-body">
-          <div class="product-tag">Clay</div>
-          <h3>Kaolin Clay — White</h3>
-          <p>Gentle, fine-grade white kaolin. Suitable for sensitive skin, loose powder, and facial mask formulations.</p>
-          <div class="product-footer">
-            <div class="product-price">$XX.XX <span>/ 250g</span></div>
-            <button class="btn-add">Add to cart</button>
-          </div>
-        </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a>Privacy policy</a></li>
+          <li><a>Terms of service</a></li>
+        </ul>
       </div>
-      <div class="product-card" data-cat="clay">
-        <div class="product-visual" style="background: #EEF0E8;">🌿</div>
-        <div class="product-body">
-          <div class="product-tag">Clay</div>
-          <h3>French Green Clay</h3>
-          <p>Highly absorbent with a distinctive mineral-rich profile. Classic choice for detoxifying masks.</p>
-          <div class="product-footer">
-            <div class="product-price">$XX.XX <span>/ 250g</span></div>
-            <button class="btn-add">Add to cart</button>
-          </div>
-        </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 CAS Chemical LLC. All rights reserved.</span>
+    </div>
+  </footer>
+</div>
+
+<!-- INGREDIENT DETAIL PAGE -->
+<div class="page" id="page-ingredient">
+  <div class="ingredient-detail-wrap">
+    <button class="ingredient-back" onclick="showPage('products')">← Back to ingredients</button>
+    <span class="section-tag" id="ing-cat-tag">Category</span>
+    <h1 class="ingredient-detail-name" id="ing-name">Ingredient Name</h1>
+
+    <div class="ingredient-detail-grid">
+      <div class="ingredient-detail-main">
+        <h3>Description</h3>
+        <p class="ingredient-placeholder-text" id="ing-description">Placeholder — add a short description here: what this ingredient is, how it's typically used in formulations, and why formulators choose it.</p>
+        <p class="ingredient-placeholder-hint">This text is a placeholder. Replace it with real copy.</p>
+
+        <h3>Origin & Sourcing</h3>
+        <p class="ingredient-placeholder-text" id="ing-origin">Placeholder — add sourcing details here: where this ingredient comes from, how it's processed, and any relevant certifications.</p>
+        <p class="ingredient-placeholder-hint">This text is a placeholder. Replace it with real copy.</p>
       </div>
-      <div class="product-card" data-cat="clay">
-        <div class="product-visual" style="background: #F2EEE8;">🪨</div>
-        <div class="product-body">
-          <div class="product-tag">Clay</div>
-          <h3>Bentonite Clay</h3>
-          <p>Swelling clay with high absorption capacity. Used in masks, deodorants, and dry shampoos.</p>
-          <div class="product-footer">
-            <div class="product-price">$XX.XX <span>/ 500g</span></div>
-            <button class="btn-add">Add to cart</button>
-          </div>
-        </div>
-      </div>
-      <!-- Actives -->
-      <div class="product-card" data-cat="active">
-        <div class="product-visual" style="background: #EDF5F0;">🌱</div>
-        <div class="product-body">
-          <div class="product-tag">Active</div>
-          <h3>Niacinamide — 98% Pure</h3>
-          <p>Water-soluble vitamin B3 active for brightening, barrier support, and pore-minimising formulations.</p>
-          <div class="product-footer">
-            <div class="product-price">$XX.XX <span>/ 50g</span></div>
-            <button class="btn-add">Add to cart</button>
-          </div>
-        </div>
-      </div>
-      <div class="product-card" data-cat="active">
-        <div class="product-visual" style="background: #EEF5F8;">💧</div>
-        <div class="product-body">
-          <div class="product-tag">Active</div>
-          <h3>Hyaluronic Acid Powder</h3>
-          <p>High molecular weight HA for surface hydration and skin-feel. Dissolves in water for serums and creams.</p>
-          <div class="product-footer">
-            <div class="product-price">$XX.XX <span>/ 10g</span></div>
-            <button class="btn-add">Add to cart</button>
-          </div>
-        </div>
-      </div>
-      <!-- Chemicals -->
-      <div class="product-card" data-cat="chemical">
-        <div class="product-visual" style="background: #F0EEF8;">⚗️</div>
-        <div class="product-body">
-          <div class="product-tag">Emulsifier</div>
-          <h3>BTMS-50</h3>
-          <p>Cationic conditioning emulsifier for hair products. Creates rich, creamy conditioners and leave-in treatments.</p>
-          <div class="product-footer">
-            <div class="product-price">$XX.XX <span>/ 100g</span></div>
-            <button class="btn-add">Add to cart</button>
-          </div>
-        </div>
-      </div>
-      <div class="product-card" data-cat="chemical">
-        <div class="product-visual" style="background: #F5F5F0;">🧪</div>
-        <div class="product-body">
-          <div class="product-tag">Preservative</div>
-          <h3>Preservative Blend — Ecocert</h3>
-          <p>Broad-spectrum preservation for water-containing formulations. Suitable for natural and organic products.</p>
-          <div class="product-footer">
-            <div class="product-price">$XX.XX <span>/ 50ml</span></div>
-            <button class="btn-add">Add to cart</button>
-          </div>
-        </div>
-      </div>
-      <div class="product-card" data-cat="chemical">
-        <div class="product-visual" style="background: #F8F4EE;">🔬</div>
-        <div class="product-body">
-          <div class="product-tag">Humectant</div>
-          <h3>Glycerin — Vegetable USP</h3>
-          <p>Vegetable-derived, USP-grade glycerin. Versatile humectant for rinse-off and leave-on formulations.</p>
-          <div class="product-footer">
-            <div class="product-price">$XX.XX <span>/ 500ml</span></div>
-            <button class="btn-add">Add to cart</button>
-          </div>
-        </div>
-      </div>
-      <div class="product-card" data-cat="oil">
-        <div class="product-visual" style="background: #FFFBEE;">🫒</div>
-        <div class="product-body">
-          <div class="product-tag">Carrier Oil</div>
-          <h3>Squalane — Sugarcane</h3>
-          <p>Lightweight, plant-derived squalane with exceptional skin compatibility and a non-greasy finish.</p>
-          <div class="product-footer">
-            <div class="product-price">$XX.XX <span>/ 100ml</span></div>
-            <button class="btn-add">Add to cart</button>
-          </div>
-        </div>
+      <div class="ingredient-detail-side">
+        <div class="ingredient-detail-icon" id="ing-icon">🧪</div>
+        <p>Pricing, availability, and COAs are provided on request.</p>
+        <button class="btn-primary" onclick="showPage('contact')" style="width: 100%;">Request pricing</button>
       </div>
     </div>
   </div>
@@ -1623,6 +2014,10 @@
       .contact-wrap { grid-template-columns: 1fr; padding: 3rem 2rem; gap: 2.5rem; }
       .form-row-grid { grid-template-columns: 1fr; }
     }
+    @media (max-width: 640px) {
+      .contact-wrap { padding: 2.5rem 1.25rem; gap: 2rem; }
+      .contact-form-card { padding: 1.75rem 1.25rem; }
+    }
   </style>
 
   <div class="contact-wrap">
@@ -1635,7 +2030,21 @@
         <div class="contact-detail-icon">✉️</div>
         <div>
           <div class="contact-detail-label">Email us</div>
-          <div class="contact-detail-value">sales@caschemicalllc.com</div>
+          <div class="contact-detail-value">hello@caschemicalllc.com</div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📦</div>
+        <div>
+          <div class="contact-detail-label">Orders & shipping</div>
+          <div class="contact-detail-value">orders@caschemicalllc.com</div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">🏭</div>
+        <div>
+          <div class="contact-detail-label">Wholesale enquiries</div>
+          <div class="contact-detail-value">wholesale@caschemicalllc.com</div>
         </div>
       </div>
     </div>
@@ -1741,6 +2150,56 @@
     return false;
   }
 
+  const CATEGORY_LABELS = {
+    'acids-actives': 'Acids & Actives',
+    'antiseptics': 'Antiseptics',
+    'butters-waxes': 'Butters & Waxes',
+    'clays': 'Clays',
+    'emollients': 'Emollients & Humectants',
+    'excipients': 'Excipients & Tablet Aids',
+    'fatty-acids': 'Fatty Acids',
+    'mcts': "MCT's",
+    'nutritional': 'Nutritional',
+    'oils': 'Oils',
+    'peptides': 'Peptides',
+    'preservatives': 'Preservatives',
+    'proteins': 'Proteins',
+    'salts-sugars': 'Salts & Sugars',
+    'sunscreen': 'Sunscreen',
+    'surfactants': 'Surfactants & Emulsifiers',
+    'vitamins': 'Vitamins'
+  };
+
+  const CATEGORY_ICONS = {
+    'acids-actives': '🧪',
+    'antiseptics': '🧴',
+    'butters-waxes': '🧈',
+    'clays': '🪨',
+    'emollients': '💧',
+    'excipients': '💊',
+    'fatty-acids': '🫧',
+    'mcts': '🥥',
+    'nutritional': '🌱',
+    'oils': '🫙',
+    'peptides': '🧬',
+    'preservatives': '🛡️',
+    'proteins': '🥚',
+    'salts-sugars': '🧂',
+    'sunscreen': '☀️',
+    'surfactants': '🧼',
+    'vitamins': '🍊'
+  };
+
+  function showIngredient(name, cat) {
+    document.getElementById('ing-name').textContent = name;
+    document.getElementById('ing-cat-tag').textContent = CATEGORY_LABELS[cat] || cat;
+    document.getElementById('ing-icon').textContent = CATEGORY_ICONS[cat] || '🧪';
+    document.getElementById('ing-description').textContent = `Placeholder — add a short description of ${name} here: what it is, how it's typically used in formulations, and why formulators choose it.`;
+    document.getElementById('ing-origin').textContent = `Placeholder — add sourcing details for ${name} here: where it comes from, how it's processed, and any relevant certifications.`;
+    showPage('ingredient');
+    return false;
+  }
+
   function toggleFAQ(btn) {
     const item = btn.parentElement;
     const wasOpen = item.classList.contains('open');
@@ -1748,11 +2207,11 @@
     if (!wasOpen) item.classList.add('open');
   }
 
-  function filterProducts(btn, cat) {
+  function filterCategory(btn, cat) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    document.querySelectorAll('.product-card').forEach(card => {
-      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'block' : 'none';
+    document.querySelectorAll('.ingredient-category').forEach(section => {
+      section.style.display = (cat === 'all' || section.dataset.cat === cat) ? 'block' : 'none';
     });
   }
 
