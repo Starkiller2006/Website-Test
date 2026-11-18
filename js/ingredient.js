@@ -13,7 +13,7 @@
   }
 
   const cat = CATEGORIES.find(c => c.id === product.category) || { label: product.category, icon: '🧪' };
-  document.title = `${product.name} — CAS Chemical LLC`;
+  document.title = `${product.name} — Cas Chemical LLC`;
   document.getElementById('ing-name').textContent = product.name;
   document.getElementById('ing-cat-tag').textContent = cat.label;
   document.getElementById('ing-icon').textContent = cat.icon;

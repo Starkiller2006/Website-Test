@@ -48,7 +48,7 @@ async function submitContactForm() {
         max_tokens: 1000,
         messages: [{
           role: 'user',
-          content: `Write a warm, professional auto-reply confirmation email for a cosmetics raw ingredients company called CAS Chemical LLC The customer's name is "${name}", their topic is "${subjectLabels[subject] || 'general enquiry'}", and their message was: "${message}".
+          content: `Write a warm, professional auto-reply confirmation email for a cosmetics raw ingredients company called Cas Chemical LLC The customer's name is "${name}", their topic is "${subjectLabels[subject] || 'general enquiry'}", and their message was: "${message}".
 
 The email should:
 - Be addressed to ${name} by first name
@@ -56,7 +56,7 @@ The email should:
 - Reference their specific topic briefly and naturally
 - Promise a reply within one business day
 - Be warm and human, not robotic
-- End with "Warm regards, The CAS Chemical LLC Team"
+- End with "Warm regards, The Cas Chemical LLC Team"
 - Be 3-5 short paragraphs
 - Use plain text only (no markdown, no asterisks, no bullet points)
 
@@ -72,11 +72,11 @@ Return ONLY the email body text, starting directly with "Hi ${name.split(' ')[0]
       document.getElementById('email-preview-text').textContent = emailText;
       document.getElementById('email-preview-text').classList.remove('loading');
     } else {
-      document.getElementById('email-preview-text').textContent = `Hi ${name.split(' ')[0]},\n\nThank you for getting in touch with CAS Chemical LLC. We have received your message and will get back to you as soon as possible — usually within one business day.\n\nWarm regards,\nThe CAS Chemical LLC Team`;
+      document.getElementById('email-preview-text').textContent = `Hi ${name.split(' ')[0]},\n\nThank you for getting in touch with Cas Chemical LLC. We have received your message and will get back to you as soon as possible — usually within one business day.\n\nWarm regards,\nThe Cas Chemical LLC Team`;
       document.getElementById('email-preview-text').classList.remove('loading');
     }
   } catch (e) {
-    document.getElementById('email-preview-text').textContent = `Hi ${name.split(' ')[0]},\n\nThank you for getting in touch with CAS Chemical LLC. We have received your message and will get back to you as soon as possible — usually within one business day.\n\nWarm regards,\nThe CAS Chemical LLC Team`;
+    document.getElementById('email-preview-text').textContent = `Hi ${name.split(' ')[0]},\n\nThank you for getting in touch with Cas Chemical LLC. We have received your message and will get back to you as soon as possible — usually within one business day.\n\nWarm regards,\nThe Cas Chemical LLC Team`;
     document.getElementById('email-preview-text').classList.remove('loading');
   }
 }
