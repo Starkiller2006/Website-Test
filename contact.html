@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — CAS Chemical LLC</title>
+<meta name="description" content="Contact CAS Chemical LLC for pricing, COAs and wholesale orders.">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html"><img src="images/logo.png" alt="">CAS<span> Chemical</span> LLC</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<main>
+<div class="contact-wrap">
+  <div class="contact-info">
+    <span class="section-tag">Contact</span>
+    <h1>Let's talk ingredients</h1>
+    <p>Whether you have a question about a specific ingredient, need help with a wholesale order, or just want to say hello — we'd love to hear from you. We aim to reply within one business day.</p>
+
+    <div class="contact-detail">
+      <div class="contact-detail-icon">✉️</div>
+      <div>
+        <div class="contact-detail-label">Email us</div>
+        <div class="contact-detail-value">hello@caschemicalllc.com</div>
+      </div>
+    </div>
+    <div class="contact-detail">
+      <div class="contact-detail-icon">📦</div>
+      <div>
+        <div class="contact-detail-label">Orders & shipping</div>
+        <div class="contact-detail-value">orders@caschemicalllc.com</div>
+      </div>
+    </div>
+    <div class="contact-detail">
+      <div class="contact-detail-icon">🏭</div>
+      <div>
+        <div class="contact-detail-label">Wholesale enquiries</div>
+        <div class="contact-detail-value">wholesale@caschemicalllc.com</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-form-card">
+    <div id="contact-form-inner">
+      <h2>Send us a message</h2>
+      <p class="form-subhead">Fill in the form and we'll be in touch soon. You'll receive a confirmation email right away.</p>
+
+      <div class="form-row-grid">
+        <div class="form-row">
+          <label for="cf-name">Your name</label>
+          <input type="text" id="cf-name" placeholder="Jane Smith">
+        </div>
+        <div class="form-row">
+          <label for="cf-email">Email address</label>
+          <input type="email" id="cf-email" placeholder="jane@example.com">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="cf-subject">Subject</label>
+        <select id="cf-subject">
+          <option value="">Select a topic...</option>
+          <option value="product">Product question</option>
+          <option value="order">Order or shipping</option>
+          <option value="wholesale">Wholesale / bulk order</option>
+          <option value="coa">Certificate of Analysis request</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" placeholder="Tell us what you're working on or what you need..."></textarea>
+      </div>
+
+      <div id="form-error" style="display:none; color:#b94a3a; font-size:0.85rem; margin-bottom:1rem; padding:0.65rem 1rem; background:#fdf0ee; border-radius:8px; border:1px solid #f5c8c2;"></div>
+
+      <button class="form-submit" id="cf-submit" onclick="submitContactForm()">
+        <span id="submit-label">Send message</span>
+      </button>
+    </div>
+
+    <div class="form-success" id="contact-success">
+      <div class="success-icon">✓</div>
+      <h3>Message received!</h3>
+      <p>Thanks for reaching out. We've sent a confirmation to your inbox and will get back to you as soon as possible — usually within one business day.</p>
+      <div class="email-preview" id="email-preview-box">
+        <div class="email-preview-label">Your confirmation email</div>
+        <div class="email-preview-content loading" id="email-preview-text">Generating your confirmation email...</div>
+      </div>
+      <button onclick="resetContactForm()" style="margin-top:1.5rem; background:none; border:1px solid var(--border); border-radius:100px; padding:0.55rem 1.25rem; font-family:var(--sans); font-size:0.82rem; color:var(--text-mid); cursor:pointer;">Send another message</button>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <h3>CAS Chemical LLC</h3>
+      <p>Premium raw ingredients for cosmetic formulators, indie brands, and makers who care about what goes into their products.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a>Shipping info</a></li>
+        <li><a>Returns</a></li>
+        <li><a>COA requests</a></li>
+        <li><a href="contact.html">Wholesale enquiries</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a>Privacy policy</a></li>
+        <li><a>Terms of service</a></li>
+        <li><a>Cookie policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 CAS Chemical LLC. All rights reserved.</span>
+    <span>Made with care for cosmetic makers</span>
+  </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script src="js/contact.js"></script>
+</body>
+</html>
