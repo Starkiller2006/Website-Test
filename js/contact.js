@@ -1,4 +1,16 @@
-/* Contact page: form validation, confirmation message, and ?product= prefill */
+/* Contact page: topic buttons, form validation, confirmation message, and ?product= prefill */
+
+// Topic buttons write their value into the hidden #cf-subject field
+function setTopic(value) {
+  document.getElementById('cf-subject').value = value;
+  document.querySelectorAll('#cf-topics .topic').forEach(b => {
+    b.setAttribute('aria-pressed', String(b.dataset.value === value));
+  });
+}
+document.getElementById('cf-topics').addEventListener('click', e => {
+  const btn = e.target.closest('.topic');
+  if (btn) setTopic(btn.dataset.value);
+});
 
 async function submitContactForm() {
   const name = document.getElementById('cf-name').value.trim();
@@ -12,7 +24,7 @@ async function submitContactForm() {
   errBox.style.display = 'none';
 
   if (!name || !email || !subject || !message) {
-    errBox.textContent = 'Please fill in all fields before sending.';
+    errBox.textContent = 'Please fill in all fields and pick a topic before sending.';
     errBox.style.display = 'block';
     return;
   }
@@ -84,10 +96,10 @@ Return ONLY the email body text, starting directly with "Hi ${name.split(' ')[0]
 function resetContactForm() {
   document.getElementById('cf-name').value = '';
   document.getElementById('cf-email').value = '';
-  document.getElementById('cf-subject').value = '';
+  setTopic('');
   document.getElementById('cf-message').value = '';
   document.getElementById('contact-success').classList.remove('visible');
-  document.getElementById('contact-form-inner').style.display = 'block';
+  document.getElementById('contact-form-inner').style.display = '';
   document.getElementById('cf-submit').disabled = false;
   document.getElementById('submit-label').textContent = 'Send message';
   document.getElementById('email-preview-text').textContent = 'Generating your confirmation email...';
@@ -98,6 +110,6 @@ function resetContactForm() {
 (function () {
   const product = getQueryParam('product');
   if (!product) return;
-  document.getElementById('cf-subject').value = 'product';
+  setTopic('product');
   document.getElementById('cf-message').value = `Hi, I'd like pricing and availability for ${product}.`;
 })();

@@ -10,78 +10,92 @@
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/products.css">
 </head>
 <body>
 
-<nav>
-  <a class="nav-logo" href="index.html"><img src="images/logo.png" alt="">Cas<span> Chemical</span> LLC</a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="products.html" class="active" aria-current="page">Products</a></li>
-    <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
-  </ul>
-</nav>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><img src="images/logo.png" alt=""><span>Cas Chemical</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="products.html" aria-current="page">Products</a>
+      <a href="about.html">About</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-dark btn-sm" href="contact.html"><span class="dot"></span>Request a quote</a>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#0B3B56" stroke-width="1.6"><path d="M3 6h12M3 12h12"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="index.html#faq">FAQ</a>
+    <a class="btn btn-dark" href="contact.html"><span class="dot"></span>Request a quote</a>
+  </nav>
+</header>
 
 <main>
-<div class="products-header">
-  <span class="section-tag">Full Catalogue</span>
-  <h1>Our ingredients</h1>
-  <p>Cosmetic-grade raw materials, sourced carefully and shipped fast.</p>
-</div>
-
-<div class="products-filters" id="products-filters" aria-label="Filter by category"></div>
-
-<div class="products-grid-section">
-  <div class="ingredients-list" id="ingredients-list"></div>
-
-  <div class="catalogue-cta">
-    <h3>Don't see what you need?</h3>
-    <p>Pricing, availability, and COAs are provided on request — get in touch and we'll put a quote together for you.</p>
-    <button class="btn-primary" onclick="location.href='contact.html'">Contact us for pricing</button>
+<section class="container catalog-head">
+  <div>
+    <span class="eyebrow">The catalogue · 237 ingredients · 17 categories</span>
+    <h1>Our ingredients</h1>
+    <p class="lead">Cosmetic-grade raw materials, sourced carefully and shipped fast.</p>
   </div>
-</div>
+  <label class="search">
+    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#5A6E79" stroke-width="1.6"><circle cx="8" cy="8" r="5.5"/><path d="M12.2 12.2 16 16"/></svg>
+    <span class="sr-only">Search ingredients</span>
+    <input type="search" id="product-search" placeholder="Search 237 ingredients…" autocomplete="off">
+    <kbd>/</kbd>
+  </label>
+</section>
+
+<section class="container catalog">
+  <aside class="sidebar" id="category-list" aria-label="Filter by category">
+    <span class="eyebrow">Categories</span>
+  </aside>
+  <div class="results">
+    <div id="ingredients-list" class="results" aria-live="polite"></div>
+    <div class="catalog-cta">
+      <div>
+        <h3>Don't see what you need?</h3>
+        <p>Pricing, availability, and COAs are provided on request — we'll put a quote together for you.</p>
+      </div>
+      <a class="btn btn-dark" href="contact.html">Contact us for pricing</a>
+    </div>
+  </div>
+</section>
 </main>
 
-<footer>
-  <div class="footer-top">
+<footer class="site-footer">
+  <div class="container footer-main">
     <div class="footer-brand">
-      <h3>Cas Chemical LLC</h3>
+      <div class="footer-logo"><span class="logo-tile"><img src="images/logo.png" alt=""></span><span>Cas Chemical LLC</span></div>
       <p>Premium raw ingredients for cosmetic formulators, indie brands, and makers who care about what goes into their products.</p>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Products</a><a href="contact.html">Contact</a>
     </div>
     <div class="footer-col">
       <h4>Support</h4>
-      <ul>
-        <li><a>Shipping info</a></li>
-        <li><a>Returns</a></li>
-        <li><a>COA requests</a></li>
-        <li><a href="contact.html">Wholesale enquiries</a></li>
-      </ul>
+      <a href="index.html#faq">Shipping info</a><a href="index.html#faq">Returns</a><a href="contact.html">COA requests</a>
     </div>
     <div class="footer-col">
-      <h4>Legal</h4>
-      <ul>
-        <li><a>Privacy policy</a></li>
-        <li><a>Terms of service</a></li>
-        <li><a>Cookie policy</a></li>
-      </ul>
+      <h4>Contact</h4>
+      <a href="mailto:hello@caschemicalllc.com">hello@caschemicalllc.com</a>
+      <a href="mailto:orders@caschemicalllc.com">orders@caschemicalllc.com</a>
+      <a href="mailto:wholesale@caschemicalllc.com">wholesale@caschemicalllc.com</a>
     </div>
   </div>
-  <div class="footer-bottom">
+  <div class="container footer-bottom">
     <span>© 2025 Cas Chemical LLC. All rights reserved.</span>
-    <span>Made with care for cosmetic makers</span>
+    <span><a href="#">Privacy policy</a><a href="#">Terms of service</a></span>
   </div>
 </footer>
 

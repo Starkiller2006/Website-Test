@@ -1,197 +1,80 @@
 /* Products page */
-/* PRODUCTS PAGE */
-.products-header {
-  padding: 4rem 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
 
-.products-header h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 0.75rem;
-}
+.catalog-head { padding-top: 64px; padding-bottom: 40px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px; }
+.catalog-head > div { display: flex; flex-direction: column; gap: 16px; }
+.catalog-head h1 { font-size: 64px; line-height: 1; letter-spacing: -0.045em; }
 
-.products-header p {
-  font-size: 1rem;
-  color: var(--text-mid);
+.search {
+  display: flex; align-items: center; gap: 12px;
+  width: 380px; max-width: 100%;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 14px 20px;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
+.search:focus-within { border-color: var(--ink); box-shadow: 0 0 0 4px var(--lime-mist); }
+.search input { flex: 1; min-width: 0; border: 0; outline: none; background: transparent; font: inherit; font-size: 15px; color: var(--ink-deep); }
+.search kbd { font-family: var(--mono); font-size: 11px; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 2px 6px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-.products-filters {
-  padding: 0 4rem 2.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
+.catalog { padding-bottom: 96px; display: flex; gap: 48px; align-items: flex-start; }
+.sidebar { width: 260px; flex-shrink: 0; position: sticky; top: 96px; display: flex; flex-direction: column; gap: 2px; max-height: calc(100vh - 120px); overflow-y: auto; }
+.sidebar .eyebrow { font-size: 11px; padding: 0 14px 12px; }
+.side-btn {
+  width: 100%;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 10px 14px;
+  border: 0; border-radius: 10px;
+  background: transparent; cursor: pointer; text-align: left;
+  font-family: var(--sans); font-size: 14px; color: var(--ink);
+  transition: background 0.15s;
 }
+.side-btn:hover { background: var(--white); }
+.side-btn .count { font-family: var(--mono); font-size: 11px; opacity: 0.75; }
+.side-btn.active { background: var(--ink); color: var(--white); }
 
-.filter-btn {
-  padding: 0.45rem 1.1rem;
-  border-radius: 100px;
-  border: 1px solid var(--border);
-  background: white;
-  font-size: 0.82rem;
-  font-weight: 400;
-  color: var(--text-mid);
-  cursor: pointer;
-  font-family: var(--sans);
-  transition: all 0.2s;
-}
+.results { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 56px; }
+.group-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-bottom: 16px; border-bottom: 2px solid var(--ink); }
+.group-head h2 { font-size: 30px; letter-spacing: -0.03em; }
+.group-head span { font-family: var(--mono); font-size: 12px; color: var(--muted); }
 
-.filter-btn:hover, .filter-btn.active {
-  border-color: var(--accent-green);
-  background: var(--accent-green-bg);
-  color: var(--accent);
-}
-
-.products-grid-section {
-  padding: 0 4rem 5rem;
-}
-
-.ingredients-list {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.ingredient-category {
-  margin-bottom: 1.5rem;
-}
-
-.ingredient-cat-heading {
-  font-family: var(--sans);
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: var(--text-dark);
-  margin-bottom: 0.75rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid var(--border);
-}
-
-.ingredient-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.ingredient-card {
-  display: flex;
-  flex-direction: column;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 1.25rem 1.25rem 1.1rem;
-  color: inherit;
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-}
-
-.ingredient-card:hover,
-.ingredient-card:focus-visible {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-  border-color: var(--accent-green);
-  outline: none;
-}
-
-.ingredient-card-head {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  margin-bottom: 0.75rem;
-}
-
-.ingredient-icon {
-  flex-shrink: 0;
-  width: 38px; height: 38px;
+.row-head, .row { display: grid; grid-template-columns: 1fr 1.7fr 1.3fr 44px; gap: 32px; }
+.row-head { padding: 14px 16px; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.row { align-items: start; padding: 22px 16px; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; transition: background 0.2s; }
+.row:hover { background: var(--white); }
+.row .name { font-family: var(--display); font-size: 18px; font-weight: 600; letter-spacing: -0.015em; color: var(--ink-deep); }
+.row .desc, .row .apps { font-size: 14px; line-height: 1.6; color: var(--slate); }
+.row .apps .dot { width: 6px; height: 6px; margin-right: 8px; vertical-align: 2px; }
+.row .apps-label { display: none; }
+.row-arrow {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid var(--line-strong);
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem;
-  background: var(--accent-bg);
-  border-radius: 10px;
-  transition: transform 0.25s;
+  transition: background 0.2s, border-color 0.2s;
 }
+.row:hover .row-arrow { background: var(--lime); border-color: var(--lime); color: var(--ink-deep); }
+.show-all { margin-top: 18px; }
+.empty { padding: 48px 0; font-size: 15px; color: var(--muted); border-top: 2px solid var(--ink); }
 
-.ingredient-card:hover .ingredient-icon { transform: scale(1.1) rotate(-6deg); }
-
-.ingredient-name {
-  font-family: var(--sans);
-  font-size: 0.98rem;
-  font-weight: 500;
-  color: var(--text-dark);
-  line-height: 1.3;
-  letter-spacing: 0;
+.catalog-cta {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px;
+  padding: 32px; border-radius: 22px; background: var(--white); border: 1px solid var(--line);
 }
+.catalog-cta h3 { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; }
+.catalog-cta p { font-size: 15px; color: var(--slate); margin-top: 6px; }
 
-.ingredient-desc {
-  font-size: 0.84rem;
-  color: var(--text-mid);
-  line-height: 1.6;
-  margin-bottom: 0.85rem;
+@media (max-width: 960px) {
+  .catalog-head { padding-top: 32px; }
+  .catalog-head h1 { font-size: 44px; }
+  .search { width: 100%; }
+  .catalog { flex-direction: column; gap: 32px; }
+  .sidebar { position: static; width: 100%; max-height: none; flex-direction: row; flex-wrap: nowrap; overflow-x: auto; gap: 8px; padding-bottom: 4px; }
+  .sidebar .eyebrow { display: none; }
+  .side-btn { width: auto; flex-shrink: 0; border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; white-space: nowrap; }
+  .row-head { display: none; }
+  .row { grid-template-columns: 1fr; gap: 8px; padding: 20px 4px; }
+  .row-arrow { display: none; }
+  .row .apps-label { display: inline; }
+  .group-head h2 { font-size: 24px; }
 }
-
-.ingredient-apps {
-  font-size: 0.8rem;
-  color: var(--text-mid);
-  line-height: 1.55;
-  background: var(--cream);
-  border-radius: 8px;
-  padding: 0.6rem 0.75rem;
-  margin-bottom: 0.9rem;
-}
-
-.ingredient-apps-label {
-  display: block;
-  font-size: 0.66rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent-green);
-  margin-bottom: 0.2rem;
-}
-
-.ingredient-card-cta {
-  margin-top: auto;
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--accent);
-}
-
-.ingredient-card:hover .ingredient-card-cta { color: var(--accent-light); }
-
-.ingredients-empty { color: var(--text-mid); padding: 2rem 0; }
-
-.catalogue-cta {
-  text-align: center;
-  max-width: 620px;
-  margin: 1rem auto 0;
-  padding: 2.5rem;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-}
-
-.catalogue-cta h3 {
-  font-family: var(--serif);
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.catalogue-cta p {
-  color: var(--text-mid);
-  margin-bottom: 1.5rem;
-}
-
-@media (max-width: 1024px) {
-  .products-header, .products-filters, .products-grid-section { padding-left: 2rem; padding-right: 2rem; }
-}
-
-@media (max-width: 640px) {
-  .products-header, .products-filters, .products-grid-section { padding-left: 1rem; padding-right: 1rem; }
-  .products-filters { gap: 0.4rem; }
-  .filter-btn { font-size: 0.76rem; padding: 0.4rem 0.85rem; }
-  .ingredient-cards { grid-template-columns: 1fr; gap: 0.75rem; }
-  .catalogue-cta { padding: 1.75rem 1.25rem; }
-}
-
-.ingredient-count { color: var(--text-light); font-weight: 400; font-size: 0.85rem; }
-.ingredient-category { padding: 0; margin-bottom: 2.5rem; }

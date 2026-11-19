@@ -10,81 +10,110 @@
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/ingredient.css">
 </head>
 <body>
 
-<nav>
-  <a class="nav-logo" href="index.html"><img src="images/logo.png" alt="">Cas<span> Chemical</span> LLC</a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="products.html" class="active" aria-current="page">Products</a></li>
-    <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
-  </ul>
-</nav>
-
-<main>
-  <div class="ingredient-detail-wrap">
-    <a class="ingredient-back" href="products.html">← Back to ingredients</a>
-    <span class="section-tag" id="ing-cat-tag">Ingredient</span>
-    <h1 class="ingredient-detail-name" id="ing-name">Ingredient</h1>
-
-    <div class="ingredient-detail-grid">
-      <div class="ingredient-detail-main">
-        <h3>Description</h3>
-        <p id="ing-description"></p>
-
-        <h3>Applications</h3>
-        <p id="ing-applications"></p>
-      </div>
-      <div class="ingredient-detail-side">
-        <div class="ingredient-detail-icon" id="ing-icon">🧪</div>
-        <p>Pricing, availability, and COAs are provided on request.</p>
-        <a class="btn-primary" id="ing-pricing" href="contact.html" style="width: 100%; display: block; text-align: center; text-decoration: none;">Request pricing</a>
-      </div>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><img src="images/logo.png" alt=""><span>Cas Chemical</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="products.html" aria-current="page">Products</a>
+      <a href="about.html">About</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-dark btn-sm" href="contact.html"><span class="dot"></span>Request a quote</a>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#0B3B56" stroke-width="1.6"><path d="M3 6h12M3 12h12"/></svg>
+      </button>
     </div>
   </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="index.html#faq">FAQ</a>
+    <a class="btn btn-dark" href="contact.html"><span class="dot"></span>Request a quote</a>
+  </nav>
+</header>
+
+<main>
+<section class="container detail-page">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="products.html">Products</a><span>/</span>
+    <a href="products.html" id="crumb-cat">Category</a><span>/</span>
+    <span aria-current="page" id="crumb-name">Ingredient</span>
+  </nav>
+
+  <div class="detail">
+    <div class="detail-main">
+      <div class="detail-title">
+        <span class="tag" id="ing-cat-tag">Category</span>
+        <h1 id="ing-name">Ingredient</h1>
+      </div>
+      <div class="detail-row">
+        <span class="eyebrow">Description</span>
+        <p class="detail-desc" id="ing-description"></p>
+      </div>
+      <div class="detail-row" id="apps-row">
+        <span class="eyebrow">Applications</span>
+        <div class="chips" id="ing-applications"></div>
+      </div>
+    </div>
+
+    <aside class="quote-card">
+      <svg aria-hidden="true" viewBox="0 0 200 160"><path d="M78 0 L122 0 L190 160 L140 160 L100 60 L60 160 L10 160 Z" fill="#84C341" opacity="0.18"/></svg>
+      <div>
+        <span class="eyebrow">Pricing on request</span>
+        <h2 id="quote-title">Get a quote</h2>
+      </div>
+      <ul class="checklist">
+        <li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#84C341" stroke-width="2"><path d="M4 9.5l3 3 7-7"/></svg>Certificate of Analysis available</li>
+        <li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#84C341" stroke-width="2"><path d="M4 9.5l3 3 7-7"/></svg>Small &amp; bulk quantities</li>
+        <li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#84C341" stroke-width="2"><path d="M4 9.5l3 3 7-7"/></svg>Reply within one business day</li>
+      </ul>
+      <a class="btn btn-lime" id="ing-pricing" href="contact.html">Request pricing →</a>
+      <a class="coa-link" id="ing-coa" href="contact.html">Request a COA</a>
+    </aside>
+  </div>
+
+  <div class="related" id="related">
+    <div class="related-head">
+      <h2 id="related-title">More in this category</h2>
+      <a class="text-link" id="related-all" href="products.html">View all →</a>
+    </div>
+    <div class="related-grid" id="related-grid"></div>
+  </div>
+</section>
 </main>
 
-<footer>
-  <div class="footer-top">
+<footer class="site-footer">
+  <div class="container footer-main">
     <div class="footer-brand">
-      <h3>Cas Chemical LLC</h3>
+      <div class="footer-logo"><span class="logo-tile"><img src="images/logo.png" alt=""></span><span>Cas Chemical LLC</span></div>
       <p>Premium raw ingredients for cosmetic formulators, indie brands, and makers who care about what goes into their products.</p>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Products</a><a href="contact.html">Contact</a>
     </div>
     <div class="footer-col">
       <h4>Support</h4>
-      <ul>
-        <li><a>Shipping info</a></li>
-        <li><a>Returns</a></li>
-        <li><a>COA requests</a></li>
-        <li><a href="contact.html">Wholesale enquiries</a></li>
-      </ul>
+      <a href="index.html#faq">Shipping info</a><a href="index.html#faq">Returns</a><a href="contact.html">COA requests</a>
     </div>
     <div class="footer-col">
-      <h4>Legal</h4>
-      <ul>
-        <li><a>Privacy policy</a></li>
-        <li><a>Terms of service</a></li>
-        <li><a>Cookie policy</a></li>
-      </ul>
+      <h4>Contact</h4>
+      <a href="mailto:hello@caschemicalllc.com">hello@caschemicalllc.com</a>
+      <a href="mailto:orders@caschemicalllc.com">orders@caschemicalllc.com</a>
+      <a href="mailto:wholesale@caschemicalllc.com">wholesale@caschemicalllc.com</a>
     </div>
   </div>
-  <div class="footer-bottom">
+  <div class="container footer-bottom">
     <span>© 2025 Cas Chemical LLC. All rights reserved.</span>
-    <span>Made with care for cosmetic makers</span>
+    <span><a href="#">Privacy policy</a><a href="#">Terms of service</a></span>
   </div>
 </footer>
 

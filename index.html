@@ -10,262 +10,194 @@
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
 
-<nav>
-  <a class="nav-logo" href="index.html"><img src="images/logo.png" alt="">Cas<span> Chemical</span> LLC</a>
-  <ul class="nav-links">
-    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="products.html">Products</a></li>
-    <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
-  </ul>
-</nav>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><img src="images/logo.png" alt=""><span>Cas Chemical</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-dark btn-sm" href="contact.html"><span class="dot"></span>Request a quote</a>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#0B3B56" stroke-width="1.6"><path d="M3 6h12M3 12h12"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="index.html#faq">FAQ</a>
+    <a class="btn btn-dark" href="contact.html"><span class="dot"></span>Request a quote</a>
+  </nav>
+</header>
 
 <main>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-left">
-    <p class="hero-eyebrow">Premium Cosmetic Ingredients</p>
-    <h1>Helping you look for what you are looking for</h1>
-    <p class="hero-sub">Pure, traceable raw ingredients for independent formulators, cosmetic brands, and makers. From plant oils to cosmetic clays — everything you need, exactly as nature made it.</p>
-    <div class="hero-actions">
-      <button class="btn-primary" onclick="location.href='products.html'">Browse Ingredients</button>
-      <button class="btn-secondary" onclick="location.href='about.html'">Our story →</button>
+<section class="container hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Cosmetic raw ingredients — since 20+ years</span>
+      <h1>Helping you look for what you are <span class="highlight">looking for.</span></h1>
+      <p class="lead">Pure, traceable raw ingredients for independent formulators, cosmetic brands, and makers. From plant oils to cosmetic clays — everything you need, exactly as nature made it.</p>
+      <div class="hero-actions">
+        <a class="btn btn-dark" href="products.html">Browse 237 ingredients <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="btn btn-outline" href="about.html">Our story</a>
+      </div>
+    </div>
+    <div class="hero-stack">
+        <a class="stack-card" href="ingredient.html?name=Jojoba%20Oil">
+          <span class="tag">Oils</span>
+          <strong>Jojoba Oil</strong>
+          <p>A liquid wax that resembles the skin's own sebum and is very stable against oxidation.</p>
+          <span class="use"><span class="use-label">Use in · </span>Facial oils; hair care</span>
+        </a>
+        <a class="stack-card" href="ingredient.html?name=Bentonite">
+          <span class="tag">Clays</span>
+          <strong>Bentonite</strong>
+          <p>An absorbent clay formed from volcanic ash. It swells in water and binds oils.</p>
+          <span class="use"><span class="use-label">Use in · </span>Face masks; thickener</span>
+        </a>
+        <a class="stack-card" href="ingredient.html?name=Hyaluronic%20Acid">
+          <span class="tag">Acids &amp; Actives</span>
+          <strong>Hyaluronic Acid</strong>
+          <p>Binds large amounts of water. Usually supplied as sodium hyaluronate.</p>
+          <span class="use"><span class="use-label">Use in · </span>Hydrating serums &amp; creams</span>
+        </a>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="hero-card">
-      <div class="hero-card-icon">🫙</div>
-      <h4>Carrier Oils</h4>
-      <p>Cold-pressed, unrefined oils for skin and hair formulations.</p>
-    </div>
-    <div class="hero-card">
-      <div class="hero-card-icon">🌿</div>
-      <h4>Plant Actives</h4>
-      <p>Botanical extracts and bioactives for efficacious cosmetics.</p>
-    </div>
-    <div class="hero-card">
-      <div class="hero-card-icon">🪨</div>
-      <h4>Cosmetic Clays</h4>
-      <p>Kaolin, bentonite and more for masks, scrubs, and powders.</p>
-    </div>
-    <div class="hero-card">
-      <div class="hero-card-icon">⚗️</div>
-      <h4>Emulsifiers & Chemicals</h4>
-      <p>Everything from emollients to preservatives — lab-grade.</p>
-    </div>
+  <div class="stats">
+    <div class="stat"><strong>237</strong><span>Ingredients in stock</span></div>
+    <div class="stat"><strong>17</strong><span>Product categories</span></div>
+    <div class="stat"><strong>20+</strong><span>Years in cosmetic supply</span></div>
+    <div class="stat"><strong>100%</strong><span>COAs available on request</span></div>
   </div>
-</div>
+</section>
 
-<!-- BENEFITS -->
-<section class="benefits-section">
-  <div class="benefits-inner">
-    <div class="benefits-header">
-      <span class="section-tag">Why Cas Chemical LLC</span>
-      <h2>Built for formulators who care</h2>
-      <p>We know you don't just need ingredients — you need confidence in what you're using and where it came from.</p>
+<section class="container section">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">01 — The catalogue</span>
+      <h2 class="section-title">Explore by category</h2>
     </div>
-    <div class="benefits-grid">
-      <div class="benefit-card">
-        <div class="benefit-number">01</div>
-        <h3>Full traceability</h3>
-        <p>Every ingredient comes with clear sourcing information so you can stand behind your formulations.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-number">02</div>
-        <h3>Batch-tested purity</h3>
-        <p>Certificates of analysis available for every product. No guessing, no compromises.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-number">03</div>
-        <h3>Small & bulk orders</h3>
-        <p>Whether you're testing a new formula or scaling production, we ship in quantities that make sense for you.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-number">04</div>
-        <h3>Formulator support</h3>
-        <p>Usage guidelines, recommended percentages, and compatibility notes included with every ingredient.</p>
-      </div>
+    <a class="text-link" href="products.html">View all ingredients →</a>
+  </div>
+  <div class="cat-grid">
+      <a class="cat-cell" href="products.html?cat=acids-actives"><span class="left"><span class="num">01</span><span class="name">Acids &amp; Actives</span></span><span class="right"><span class="count">24</span><span class="arrow" aria-hidden="true">→</span></span></a>
+      <a class="cat-cell" href="products.html?cat=antiseptics"><span class="left"><span class="num">02</span><span class="name">Antiseptics</span></span><span class="right"><span class="count">08</span><span class="arrow" aria-hidden="true">→</span></span></a>
+      <a class="cat-cell" href="products.html?cat=butters-waxes"><span class="left"><span class="num">03</span><span class="name">Butters &amp; Waxes</span></span><span class="right"><span class="count">29</span><span class="arrow" aria-hidden="true">→</span></span></a>
+      <a class="cat-cell" href="products.html?cat=clays"><span class="left"><span class="num">04</span><span class="name">Clays</span></span><span class="right"><span class="count">13</span><span class="arrow" aria-hidden="true">→</span></span></a>
+      <a class="cat-cell" href="products.html?cat=emollients"><span class="left"><span class="num">05</span><span class="name">Emollients &amp; Humectants</span></span><span class="right"><span class="count">05</span><span class="arrow" aria-hidden="true">→</span></span></a>
+      <a class="cat-cell" href="products.html?cat=excipients"><span class="left"><span class="num">06</span><span class="name">Excipients &amp; Tablet Aids</span></span><span class="right"><span class="count">12</span><span class="arrow" aria-hidden="true">→</span></span></a>
+      <a class="cat-cell" href="products.html?cat=fatty-acids"><span class="left"><span class="num">07</span><span class="name">Fatty Acids</span></span><span class="right"><span class="count">04</span><span class="arrow" aria-hidden="true">→</span></span></a>
+      <a class="cat-cell" href="products.html?cat=mcts"><span class="left"><span class="num">08</span><span class="name">MCT's</span></span><span class="right"><span class="count">03</span><span class="arrow" aria-hidden="true">→</span></span></a>
+      <a class="cat-cell" href="products.html?cat=nutritional"><span class="left"><span class="num">09</span><span class="name">Nutritional</span></span><span class="right"><span class="count">17</span><span class="arrow" aria-hidden="true">→</span></span></a>
+      <a class="cat-cell" href="products.html?cat=oils"><span class="left"><span class="num">10</span><span class="name">Oils</span></span><span class="right"><span class="count">79</span><span class="arrow" aria-hidden="true">→</span></span></a>
+      <a class="cat-cell" href="products.html?cat=peptides"><span class="left"><span class="num">11</span><span class="name">Peptides</span></span><span class="right"><span class="count">07</span><span class="arrow" aria-hidden="true">→</span></span></a>
+      <a class="cat-cell" href="products.html?cat=preservatives"><span class="left"><span class="num">12</span><span class="name">Preservatives</span></span><span class="right"><span class="count">07</span><span class="arrow" aria-hidden="true">→</span></span></a>
+      <a class="cat-cell" href="products.html?cat=proteins"><span class="left"><span class="num">13</span><span class="name">Proteins</span></span><span class="right"><span class="count">03</span><span class="arrow" aria-hidden="true">→</span></span></a>
+      <a class="cat-cell" href="products.html?cat=salts-sugars"><span class="left"><span class="num">14</span><span class="name">Salts &amp; Sugars</span></span><span class="right"><span class="count">12</span><span class="arrow" aria-hidden="true">→</span></span></a>
+      <a class="cat-cell" href="products.html?cat=sunscreen"><span class="left"><span class="num">15</span><span class="name">Sunscreen</span></span><span class="right"><span class="count">03</span><span class="arrow" aria-hidden="true">→</span></span></a>
+      <a class="cat-cell" href="products.html?cat=surfactants"><span class="left"><span class="num">16</span><span class="name">Surfactants &amp; Emulsifiers</span></span><span class="right"><span class="count">04</span><span class="arrow" aria-hidden="true">→</span></span></a>
+      <a class="cat-cell" href="products.html?cat=vitamins"><span class="left"><span class="num">17</span><span class="name">Vitamins</span></span><span class="right"><span class="count">07</span><span class="arrow" aria-hidden="true">→</span></span></a>
+  </div>
+</section>
+
+<section class="why section">
+  <div class="container">
+    <div class="why-head">
+      <span class="eyebrow">02 — Why Cas Chemical</span>
+      <h2 class="section-title">Built for formulators who care.</h2>
+      <p class="lead">We know you don't just need ingredients — you need confidence in what you're using and where it came from.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item"><span class="eyebrow"><span class="dot"></span>01</span><h3>Full traceability</h3><p>Every ingredient comes with clear sourcing information so you can stand behind your formulations.</p></div>
+      <div class="why-item"><span class="eyebrow"><span class="dot"></span>02</span><h3>Batch-tested purity</h3><p>Certificates of analysis available for every product. No guessing, no compromises.</p></div>
+      <div class="why-item"><span class="eyebrow"><span class="dot"></span>03</span><h3>Small &amp; bulk orders</h3><p>Whether you're testing a new formula or scaling production, we ship in quantities that make sense for you.</p></div>
+      <div class="why-item"><span class="eyebrow"><span class="dot"></span>04</span><h3>Formulator support</h3><p>Usage guidelines, recommended percentages, and compatibility notes included with every ingredient.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CATEGORIES -->
-<section>
-  <div class="categories-section">
-    <span class="section-tag">What we carry</span>
-    <h2 style="font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 0.75rem;">Explore our ingredient range</h2>
-    <p style="color: var(--text-mid); font-size: 1.05rem; max-width: 52ch; line-height: 1.75;">From oils and butters to clays, actives, and functional chemicals — a curated selection for serious cosmetic formulators.</p>
-    <div class="categories-grid">
-      <a class="category-card" href="products.html?cat=oils">
-        <div class="category-visual oils">🫙</div>
-        <div class="category-body">
-          <h3>Oils & Butters</h3>
-          <p>Cold-pressed carrier oils, refined and unrefined plant butters. Jojoba, rosehip, shea, mango, and more.</p>
-          <button class="category-link">Browse oils →</button>
+<section class="container section" id="faq">
+  <div class="faq-grid">
+    <div class="faq-intro">
+      <span class="eyebrow">03 — FAQ</span>
+      <h2 class="section-title">Questions, answered.</h2>
+      <p class="lead">Anything not covered here? <a class="text-link" href="contact.html">Reach out</a> — we're happy to help.</p>
+    </div>
+    <div class="faq-list">
+        <div class="faq-item open">
+          <button class="faq-q" aria-expanded="true"><span>What is the minimum order quantity?</span><span class="faq-icon" aria-hidden="true">−</span></button>
+          <p class="faq-a">Most of our ingredients are available from as little as 50g or 100ml, making it easy to test formulations before committing to larger quantities. Some specialty ingredients have a higher minimum — this is noted on each product page.</p>
         </div>
-      </a>
-      <a class="category-card" href="products.html?cat=clays">
-        <div class="category-visual clays">🪨</div>
-        <div class="category-body">
-          <h3>Clays & Minerals</h3>
-          <p>Kaolin, bentonite, French green clay, and cosmetic-grade mineral powders for a range of skin types.</p>
-          <button class="category-link">Browse clays →</button>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span>Do you provide Certificates of Analysis (COA)?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+          <p class="faq-a">Yes. COAs are available for every ingredient we stock. We believe full transparency about ingredient quality is non-negotiable.</p>
         </div>
-      </a>
-      <a class="category-card" href="products.html?cat=acids-actives">
-        <div class="category-visual actives">⚗️</div>
-        <div class="category-body">
-          <h3>Actives & Chemicals</h3>
-          <p>Emulsifiers, surfactants, preservatives, humectants, and botanical extracts for functional formulations.</p>
-          <button class="category-link">Browse actives →</button>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span>Are your ingredients suitable for leave-on cosmetics?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+          <p class="faq-a">Many of them are, yes — but suitability depends on the specific ingredient, its grade, and your formulation. Each product page includes usage guidance and typical application types to help you formulate confidently.</p>
         </div>
-      </a>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span>Do you ship internationally?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+          <p class="faq-a">We currently ship to [YOUR REGIONS]. Some chemicals and actives are restricted in certain countries due to local cosmetic regulations. If you are unsure, contact us before ordering.</p>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span>Can I get samples before placing a full order?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+          <p class="faq-a">Our small-quantity starting sizes are designed to work as sampling orders. For specific sample requests or wholesale enquiries, get in touch and we will do our best to accommodate.</p>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span>How are products stored and shipped?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+          <p class="faq-a">All ingredients are stored in climate-appropriate conditions and shipped in sealed, food-safe or lab-grade packaging. Temperature-sensitive ingredients are packed with appropriate insulation during warmer months.</p>
+        </div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials-section">
-  <div class="testimonials-inner">
-    <span class="section-tag">Reviews</span>
-    <h2>What our customers say</h2>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Replace this with a real review from one of your customers. A short, specific quote about the quality or service works best."</blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar">AB</div>
-          <div>
-            <div class="author-name">Customer Name</div>
-            <div class="author-title">Independent Formulator</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Another placeholder for a genuine customer testimonial. Mention a specific product or outcome for maximum credibility."</blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar">CD</div>
-          <div>
-            <div class="author-name">Customer Name</div>
-            <div class="author-title">Skincare Brand Founder</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"A third testimonial here. Consider asking your best customers for a short quote — even two sentences goes a long way."</blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar">EF</div>
-          <div>
-            <div class="author-name">Customer Name</div>
-            <div class="author-title">DIY Cosmetics Maker</div>
-          </div>
-        </div>
-      </div>
+<section class="container" style="padding-bottom: 96px">
+  <div class="cta-band">
+    <svg aria-hidden="true" viewBox="0 0 400 300"><path d="M150 0 L250 0 L360 300 L260 300 L200 120 L140 300 L40 300 Z" fill="#84C341" opacity="0.14"/></svg>
+    <div>
+      <h2>Pricing, availability and COAs — on request.</h2>
+      <p>Tell us what you're formulating and we'll put a quote together, usually within one business day.</p>
     </div>
-    <p class="testimonials-placeholder-note">← Replace these placeholders with real quotes from your customers</p>
+    <a class="btn btn-lime" href="contact.html">Request pricing →</a>
   </div>
 </section>
-
-<!-- FAQ -->
-<section class="faq-section">
-  <div class="faq-inner">
-    <span class="section-tag">FAQ</span>
-    <h2>Frequently asked questions</h2>
-    <p class="faq-subhead">Anything not covered here? Reach out — we're happy to help.</p>
-
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFAQ(this)">
-        What is the minimum order quantity?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">Most of our ingredients are available from as little as 50g or 100ml, making it easy to test formulations before committing to larger quantities. Some specialty ingredients have a higher minimum — this is noted on each product page.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFAQ(this)">
-        Do you provide Certificates of Analysis (COA)?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">Yes. COAs are available for every ingredient we stock. Starter customers can request them, while Pro and Wholesale accounts receive them automatically with each order. We believe full transparency about ingredient quality is non-negotiable.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFAQ(this)">
-        Are your ingredients suitable for leave-on cosmetics?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">Many of them are, yes — but suitability depends on the specific ingredient, its grade, and your formulation. Each product page includes usage guidance, typical application types, and recommended inclusion rates to help you formulate confidently.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFAQ(this)">
-        Do you ship internationally?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">We currently ship to [your regions here]. Some chemicals and actives are restricted in certain countries due to local cosmetic regulations. If you're unsure whether an ingredient can be shipped to your location, contact us before ordering.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFAQ(this)">
-        Can I get samples before placing a full order?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">Our small-quantity starting sizes are designed to work as sampling orders. For specific sample requests on larger-format products or wholesale enquiries, get in touch and we'll do our best to accommodate.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFAQ(this)">
-        How are products stored and shipped?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">All ingredients are stored in climate-appropriate conditions and shipped in sealed, food-safe or lab-grade packaging. Temperature-sensitive ingredients are flagged and packed with appropriate insulation during warmer months.</div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 </main>
 
-<footer>
-  <div class="footer-top">
+<footer class="site-footer">
+  <div class="container footer-main">
     <div class="footer-brand">
-      <h3>Cas Chemical LLC</h3>
+      <div class="footer-logo"><span class="logo-tile"><img src="images/logo.png" alt=""></span><span>Cas Chemical LLC</span></div>
       <p>Premium raw ingredients for cosmetic formulators, indie brands, and makers who care about what goes into their products.</p>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Products</a><a href="contact.html">Contact</a>
     </div>
     <div class="footer-col">
       <h4>Support</h4>
-      <ul>
-        <li><a>Shipping info</a></li>
-        <li><a>Returns</a></li>
-        <li><a>COA requests</a></li>
-        <li><a href="contact.html">Wholesale enquiries</a></li>
-      </ul>
+      <a href="index.html#faq">Shipping info</a><a href="index.html#faq">Returns</a><a href="contact.html">COA requests</a>
     </div>
     <div class="footer-col">
-      <h4>Legal</h4>
-      <ul>
-        <li><a>Privacy policy</a></li>
-        <li><a>Terms of service</a></li>
-        <li><a>Cookie policy</a></li>
-      </ul>
+      <h4>Contact</h4>
+      <a href="mailto:hello@caschemicalllc.com">hello@caschemicalllc.com</a>
+      <a href="mailto:orders@caschemicalllc.com">orders@caschemicalllc.com</a>
+      <a href="mailto:wholesale@caschemicalllc.com">wholesale@caschemicalllc.com</a>
     </div>
   </div>
-  <div class="footer-bottom">
+  <div class="container footer-bottom">
     <span>© 2025 Cas Chemical LLC. All rights reserved.</span>
-    <span>Made with care for cosmetic makers</span>
+    <span><a href="#">Privacy policy</a><a href="#">Terms of service</a></span>
   </div>
 </footer>
 
